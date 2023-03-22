@@ -35,3 +35,19 @@ router.post('/', async (req, res) => {
   }
 });
 
+// PUT update a restaurant by id
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedRestaurantData = await Restaurant.update(req.body, {
+      where: { id: req.params.id },
+    });
+    if (!updatedRestaurantData[0]) {
+      res.status(404).json({ message: 'No restaurant found with this id!' });
+      return;
+    }
+    res.status(200).json(updatedRestaurantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
