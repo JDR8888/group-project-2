@@ -25,3 +25,13 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// POST a new restaurant
+router.post('/', async (req, res) => {
+  try {
+    const newRestaurantData = await Restaurant.create(req.body);
+    res.status(201).json(newRestaurantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
