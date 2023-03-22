@@ -42,4 +42,4 @@ Restaraunt.init(
   }
 );
 
-module.exports = User;
+module.exports = Restaraunt;
