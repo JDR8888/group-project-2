@@ -6,6 +6,12 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/login", async (req, res) => {
+  res.render("login", {
+    title: "login",
+  });
+});
+
 module.exports = router;
 
 // when you query for a user's dates
