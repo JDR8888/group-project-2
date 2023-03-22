@@ -12,6 +12,12 @@ router.get("/login", async (req, res) => {
   });
 });
 
+router.get("/dating", async(req,res)=>{
+  res.render('dating'),{
+    title: "dating"
+  }
+})
+
 module.exports = router;
 
 // when you query for a user's dates
