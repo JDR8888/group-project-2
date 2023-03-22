@@ -2,12 +2,22 @@ const User = require("./User");
 const Restaraunt = require("./Restaraunt");
 const Dates = require("./Dates");
 
-//Dates belongsto User
+User.hasMany(Dates, {
+  foreign_key: "user_id",
+  onDelete: "CASCADE",
+});
 
-//User has many Dates
+Dates.belongsTo.apply(User, {
+  foreignKey: "user_id",
+});
 
-//Date belongs to Restaraunt
+Restaraunt.hasMany(Dates, {
+  foreignKey: "restaraunt_id",
+  onDelete: "CASCADE",
+});
 
-//Restaraunt has many Dates
+Date.belongsTo(Restaraunt, {
+  foreignKey: "restaraunt_id",
+});
 
-module.exports = { User, Restaraunt };
+module.exports = { User, Restaraunt, Dates };
