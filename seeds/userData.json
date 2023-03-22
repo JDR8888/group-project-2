@@ -7,10 +7,10 @@
     "bio": "I was born on a farm and never learned to read.",
     "gender": "Female",
     "birthday": "02/22/1985",
-    "favorite food": "Gnocci",
+    "favorite_food": "Gnocci",
     "location": "Upper East Side",
-    "what food tonight?": "Italian",
-    "profile pic": "./assets/profile-pics/01"
+    "what_to_eat": "Italian",
+    "profile_pic": "./assets/profile-pics/01"
   },
   {
     "name": "Doctor Insane",
@@ -20,10 +20,10 @@
     "bio": "My father was a drunk and beat me with a frying pan",
     "gender": "Trans",
     "birthday": "04/15/1994",
-    "favorite food": "Worms",
+    "favorite_food": "Worms",
     "location": "Gowanus",
-    "what food tonight?": "Japanese",
-    "profile pic": "./assets/profile-pics/02"
+    "what_to_eat": "Japanese",
+    "profile_pic": "./assets/profile-pics/02"
   },
   {
     "name": "Jabberwocky Ebaneezer",
@@ -33,10 +33,10 @@
     "bio": "I've never smiled or laughed in my life",
     "gender": "Male",
     "birthday": "10/10/1995",
-    "favorite food": "Popsicles",
+    "favorite_food": "Popsicles",
     "location": "Bedstuy",
-    "what food tonight?": "Chopped Cheese",
-    "profile pic": "./assets/profile-pics/03"
+    "what_to_eat": "Chopped Cheese",
+    "profile_pic": "./assets/profile-pics/03"
   },
   {
     "name": "Julie Dreyfus",
@@ -46,10 +46,10 @@
     "bio": "From an early age I loved setting things on fire",
     "gender": "Female",
     "birthday": "12/12/1925",
-    "favorite food": "Pizza",
+    "favorite_food": "Pizza",
     "location": "East New York",
-    "what food tonight?": "Fritatas",
-    "profile pic": "./assets/profile-pics/04"
+    "what_to_eat": "Fritatas",
+    "profile_pic": "./assets/profile-pics/04"
   },
   {
     "name": "Bernadine Lyndon",
@@ -59,10 +59,10 @@
     "bio": "I never met a dog I didn't like",
     "gender": "Female",
     "birthday": "11/11/1989",
-    "favorite food": "Tots",
+    "favorite_food": "Tots",
     "location": "Astoria",
-    "what food tonight?": "Hot Pot",
-    "profile pic": "./assets/profile-pics/05"
+    "what_to_eat": "Hot Pot",
+    "profile_pic": "./assets/profile-pics/05"
   },
   {
     "name": "Philip Neumann",
@@ -72,9 +72,9 @@
     "bio": "I was born on the first day of spring in 1990",
     "gender": "Male",
     "birthday": "03/22/1990",
-    "favorite food": "Dim Sum",
+    "favorite_food": "Dim Sum",
     "location": "Bushwick",
-    "what food tonight?": "Ramen",
-    "profile pic": "./assets/profile-pics/06"
+    "what_to_eat": "Ramen",
+    "profile_pic": "./assets/profile-pics/06"
   }
 ]
