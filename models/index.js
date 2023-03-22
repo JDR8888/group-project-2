@@ -1,23 +1,35 @@
 const User = require("./User");
 const Restaurant = require("./Restaurant");
-const Dates = require("./Dates");
+const Date = require("./Date");
 
-User.hasMany(Dates, {
+User.hasMany(Date, {
   foreign_key: "user_id",
   onDelete: "CASCADE",
 });
 
-Dates.belongsTo(User, {
+Date.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Restaurant.hasMany(Dates, {
+User.belongsToMany(User, {
+  through: { model: Date },
+  foreignKey: "user_id",
+  as: "date_partners",
+});
+
+User.belongsToMany(User, {
+  through: { model: Date },
+  foreignKey: "date_id",
+  as: "date_asker",
+});
+
+Restaurant.hasMany(Date, {
   foreignKey: "restaurant_id",
   onDelete: "CASCADE",
 });
 
-Dates.belongsTo(Restaurant, {
+Date.belongsTo(Restaurant, {
   foreignKey: "restaurant_id",
 });
 
-module.exports = { User, Restaurant, Dates };
+module.exports = { User, Restaurant, Date };
