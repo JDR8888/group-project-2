@@ -6,4 +6,10 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/login", async (req, res) => {
+  res.render("login", {
+    title: "login",
+  });
+});
+
 module.exports = router;
