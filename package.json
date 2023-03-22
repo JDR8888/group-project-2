@@ -1,7 +1,6 @@
 {
   "name": "user-list",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,5 +22,14 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.21",
     "sequelize": "^6.3.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDR8888/love-hungry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JDR8888/love-hungry/issues"
+  },
+  "homepage": "https://github.com/JDR8888/love-hungry#readme",
+  "description": ""
 }
