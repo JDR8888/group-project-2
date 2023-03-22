@@ -1,5 +1,5 @@
 const User = require("./User");
-const Restaraunt = require("./Restaraunt");
+const Restaurant = require("./Restaurant");
 const Dates = require("./Dates");
 
 User.hasMany(Dates, {
@@ -7,17 +7,17 @@ User.hasMany(Dates, {
   onDelete: "CASCADE",
 });
 
-Dates.belongsTo.apply(User, {
+Dates.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Restaraunt.hasMany(Dates, {
-  foreignKey: "restaraunt_id",
+Restaurant.hasMany(Dates, {
+  foreignKey: "restaurant_id",
   onDelete: "CASCADE",
 });
 
-Date.belongsTo(Restaraunt, {
-  foreignKey: "restaraunt_id",
+Dates.belongsTo(Restaurant, {
+  foreignKey: "restaurant_id",
 });
 
-module.exports = { User, Restaraunt, Dates };
+module.exports = { User, Restaurant, Dates };

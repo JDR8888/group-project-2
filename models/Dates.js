@@ -12,12 +12,12 @@ Dates.init(
       autoIncrement: true,
       unique: true,
     },
-    restaraunt_id: {
+    restaurant_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       unique: false,
       references: {
-        model: "restaraunt",
+        model: "restaurant",
         key: "id",
       },
     },
@@ -45,7 +45,7 @@ Dates.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "library_card",
+    modelName: "dates",
   }
 );
 
