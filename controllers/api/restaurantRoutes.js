@@ -51,3 +51,20 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// DELETE a restaurant by id
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedRestaurantData = await Restaurant.destroy({
+      where: { id: req.params.id },
+    });
+    if (!deletedRestaurantData) {
+      res.status(404).json({ message: 'No restaurant found with this id!' });
+      return;
+    }
+    res.status(200).json(deletedRestaurantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
