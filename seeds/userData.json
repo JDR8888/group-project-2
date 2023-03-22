@@ -9,7 +9,8 @@
     "birthday": "02/22/1985",
     "favorite food": "Gnocci",
     "location": "Upper East Side",
-    "what food tonight?": "Italian"
+    "what food tonight?": "Italian",
+    "profile pic": "./assets/profile-pics/01"
   },
   {
     "name": "Doctor Insane",
@@ -21,7 +22,8 @@
     "birthday": "04/15/1994",
     "favorite food": "Worms",
     "location": "Gowanus",
-    "what food tonight?": "Japanese"
+    "what food tonight?": "Japanese",
+    "profile pic": "./assets/profile-pics/02"
   },
   {
     "name": "Jabberwocky Ebaneezer",
@@ -33,7 +35,8 @@
     "birthday": "10/10/1995",
     "favorite food": "Popsicles",
     "location": "Bedstuy",
-    "what food tonight?": "Chopped Cheese"
+    "what food tonight?": "Chopped Cheese",
+    "profile pic": "./assets/profile-pics/03"
   },
   {
     "name": "Julie Dreyfus",
@@ -45,7 +48,8 @@
     "birthday": "12/12/1925",
     "favorite food": "Pizza",
     "location": "East New York",
-    "what food tonight?": "Fritatas"
+    "what food tonight?": "Fritatas",
+    "profile pic": "./assets/profile-pics/04"
   },
   {
     "name": "Bernadine Lyndon",
@@ -57,7 +61,8 @@
     "birthday": "11/11/1989",
     "favorite food": "Tots",
     "location": "Astoria",
-    "what food tonight?": "Hot Pot"
+    "what food tonight?": "Hot Pot",
+    "profile pic": "./assets/profile-pics/05"
   },
   {
     "name": "Philip Neumann",
@@ -69,6 +74,7 @@
     "birthday": "03/22/1990",
     "favorite food": "Dim Sum",
     "location": "Bushwick",
-    "what food tonight?": "Ramen"
+    "what food tonight?": "Ramen",
+    "profile pic": "./assets/profile-pics/06"
   }
 ]
