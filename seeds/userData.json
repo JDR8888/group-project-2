@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Erica Monroe",
+    "email": "emonroe@hotmail.com",
+    "password": "password12345",
+    "zodiac": "Pisces",
+    "bio": "I was born on a farm and never learned to read.",
+    "gender": "Female",
+    "birthday": "02/22/1985",
+    "favorite food": "Gnocci",
+    "location": "Upper East Side",
+    "what food tonight?": "Italian"
+  },
+  {
+    "name": "Doctor Insane",
+    "email": "madman420@gmail.com",
+    "password": "iwanttokilleverybody",
+    "zodiac": "Aries",
+    "bio": "My father was a drunk and beat me with a frying pan",
+    "gender": "Trans",
+    "birthday": "04/15/1994",
+    "favorite food": "Worms",
+    "location": "Gowanus",
+    "what food tonight?": "Japanese"
+  },
+  {
+    "name": "Jabberwocky Ebaneezer",
+    "email": "jabcock320@aol.com",
+    "password": "jabz#$%^&",
+    "zodiac": "Capricorn",
+    "bio": "I've never smiled or laughed in my life",
+    "gender": "Male",
+    "birthday": "10/10/1995",
+    "favorite food": "Popsicles",
+    "location": "Bedstuy",
+    "what food tonight?": "Chopped Cheese"
+  },
+  {
+    "name": "Julie Dreyfus",
+    "email": "jdray09@msn.com",
+    "password": "K!//cux098&^%$",
+    "zodiac": "Saggitarius",
+    "bio": "From an early age I loved setting things on fire",
+    "gender": "Female",
+    "birthday": "12/12/1925",
+    "favorite food": "Pizza",
+    "location": "East New York",
+    "what food tonight?": "Fritatas"
+  },
+  {
+    "name": "Bernadine Lyndon",
+    "email": "Blyndon@yahoo.com",
+    "password": "kubrickschild",
+    "zodiac": "Scorpio",
+    "bio": "I never met a dog I didn't like",
+    "gender": "Female",
+    "birthday": "11/11/1989",
+    "favorite food": "Tots",
+    "location": "Astoria",
+    "what food tonight?": "Hot Pot"
+  },
+  {
+    "name": "Philip Neumann",
+    "email": "philman202@yahoo.com",
+    "password": "tesseradecades",
+    "zodiac": "Aries",
+    "bio": "I was born on the first day of spring in 1990",
+    "gender": "Male",
+    "birthday": "03/22/1990",
+    "favorite food": "Dim Sum",
+    "location": "Bushwick",
+    "what food tonight?": "Ramen"
+  }
+]
