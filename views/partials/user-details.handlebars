@@ -1,15 +1,20 @@
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{profile_picture_url}}" class="card-img" alt="{{username}}">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{username}}</h5>
-        <p class="card-text"><strong>Gender:</strong> {{gender}}</p>
-        <p class="card-text"><strong>Zodiac Sign:</strong> {{zodiac_sign}}</p>
-        <a href="/message-board/{{id}}" class="btn btn-primary">Message</a>
+{{#each displayDates as |date|}}
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{date.profile_pic}}" class="card-img" alt="{{date.name}}" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{date.name}}</h5>
+          <p class="card-text"><strong>Gender:</strong> {{date.gender}}</p>
+          <p class="card-text"><strong>Zodiac Sign:</strong>
+            {{date.zodiac}}</p>
+          <p class="card-text"><strong>Bio:</strong> {{date.bio}}</p>
+          <a href="/message-board/{{date.id}}" class="btn btn-primary">Send
+            Message</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+{{/each}}
