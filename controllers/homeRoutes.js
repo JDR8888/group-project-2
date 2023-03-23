@@ -1,17 +1,17 @@
-const router = require("express").Router();
-const { User, Restaurant, Date } = require("../models");
-const { Op } = require("sequelize");
+const router = require('express').Router();
+const { Op } = require('sequelize');
+const { User, Restaurant } = require('../models');
 
-router.get("/", async (req, res) => {
-  res.render("homepage", {
-    title: "Homepage",
+router.get('/', async (req, res) => {
+  res.render('homepage', {
+    title: 'Homepage',
     logged_in: req.session.logged_in,
   });
 });
 
-router.get("/login", async (req, res) => {
-  res.render("login", {
-    title: "login",
+router.get('/login', async (req, res) => {
+  res.render('login', {
+    title: 'login',
   });
 });
 
@@ -21,7 +21,7 @@ router.get("/login", async (req, res) => {
 //   });
 // });
 
-router.get("/dating", async (req, res) => {
+router.get('/dating', async (req, res) => {
   try {
     const userData = await User.findAll({
       where: {
@@ -42,22 +42,22 @@ router.get("/dating", async (req, res) => {
       restaurants.get({ plain: true })
     );
 
-    res.render("dating", {
+    res.render('dating', {
       what_to_eat: req.session.user.what_to_eat,
       location: req.session.user.location,
       displayDates,
       displayRestaurants,
       loggedIn: req.session.logged_in,
-      title: "Dating",
+      title: 'Dating',
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/signup", async (req, res) => {
-  res.render("signup", {
-    title: "signup",
+router.get('/signup', async (req, res) => {
+  res.render('signup', {
+    title: 'signup',
   });
 });
 
