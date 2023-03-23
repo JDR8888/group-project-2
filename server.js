@@ -28,7 +28,6 @@ app.use(session(sess));
 // Inform Express.js which template engine we're using
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-app.get('/api/matches', apiController.getMatches);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
