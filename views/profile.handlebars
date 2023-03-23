@@ -20,24 +20,7 @@
       <label for="location">Location:</label>
       <input type="text" class="form-control" id="location" name="location" value="{{location}}">
     </div>
-    <div class="form-group">
-      <label for="zodiac_sign">Zodiac Sign:</label>
-      <select class="form-control" id="zodiac_sign" name="zodiac_sign">
-        <option value="">Select Zodiac Sign</option>
-        <option value="Aquarius" {{#if (eq zodiac_sign "Aquarius")}}selected{{/if}}>Aquarius</option>
-        <option value="Pisces" {{#if (eq zodiac_sign "Pisces")}}selected{{/if}}>Pisces</option>
-        <option value="Aries" {{#if (eq zodiac_sign "Aries")}}selected{{/if}}>Aries</option>
-        <option value="Taurus" {{#if (eq zodiac_sign "Taurus")}}selected{{/if}}>Taurus</option>
-        <option value="Gemini" {{#if (eq zodiac_sign "Gemini")}}selected{{/if}}>Gemini</option>
-        <option value="Cancer" {{#if (eq zodiac_sign "Cancer")}}selected{{/if}}>Cancer</option>
-        <option value="Leo" {{#if (eq zodiac_sign "Leo")}}selected{{/if}}>Leo</option>
-        <option value="Virgo" {{#if (eq zodiac_sign "Virgo")}}selected{{/if}}>Virgo</option>
-        <option value="Libra" {{#if (eq zodiac_sign "Libra")}}selected{{/if}}>Libra</option>
-        <option value="Scorpio" {{#if (eq zodiac_sign "Scorpio")}}selected{{/if}}>Scorpio</option>
-        <option value="Sagittarius" {{#if (eq zodiac_sign "Sagittarius")}}selected{{/if}}>Sagittarius</option>
-        <option value="Capricorn" {{#if (eq zodiac_sign "Capricorn")}}selected{{/if}}>Capricorn</option>
-      </select>
-    </div>
+    
     <div class="form-group">
       <label for="food_preferences">Food Preferences:</label>
       <textarea class="form-control" id="food_preferences" name="food_preferences">{{food_preferences}}</textarea>
