@@ -18,6 +18,12 @@ router.get("/dating", async(req,res)=>{
   }
 })
 
+router.get("/signup", async (req, res) => {
+  res.render("signup", {
+    title: "signup",
+  });
+});
+
 module.exports = router;
 
 // when you query for a user's dates
