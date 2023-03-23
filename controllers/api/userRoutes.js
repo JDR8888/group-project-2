@@ -50,4 +50,31 @@ router.get('/', async (req, res) => {
   }
 });
 
+// will be done in the '/signup' path but leaving blank for now
+router.post('/', async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      bio: req.body.bio,
+      gender: req.body.gender,
+      birthday: req.body.birthday,
+      favorite_food: req.body.favorite_food,
+      location: req.body.location,
+      what_to_eat: req.body.what_to_eat,
+      profile_pic: req.body.profile_pic,
+    });
+
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    // });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
