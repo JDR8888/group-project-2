@@ -37,11 +37,14 @@ router.get("/dating", async (req, res) => {
       },
     });
 
+    const displayDates = userData.map((users) => users.get({ plain: true }));
     const displayRestaurants = restaurantData.map((restaurants) =>
       restaurants.get({ plain: true })
     );
 
     res.render("dating", {
+      what_to_eat: req.session.user.what_to_eat,
+      location: req.session.user.location,
       displayDates,
       displayRestaurants,
       loggedIn: req.session.logged_in,
