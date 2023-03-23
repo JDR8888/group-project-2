@@ -7,5 +7,6 @@ const db = require("../../models");
 router.use("/users", userRoutes);
 router.use("/restaurants", restaurantRoutes);
 router.use("/dates", dateRoutes);
+router.use("/messages", dateRoutes);
 
 module.exports = router;
