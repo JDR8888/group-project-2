@@ -1,9 +1,10 @@
 const sequelize = require("../config/connection");
-const { User, Restaurant, Date } = require("../models");
+const { User, Restaurant, Date, Message } = require("../models");
 
 const rawRestaurantData = require("./restaurantData.json");
 const userData = require("./userData.json");
 const datesData = require("./dateData.json");
+const messageData = require("./messageData.json");
 
 const filteredData = rawRestaurantData.filter((obj) => {
   return (
@@ -28,6 +29,10 @@ const seedDatabase = async () => {
   });
 
   await Date.bulkCreate(datesData, {
+    returning: true,
+  });
+
+  await Message.bulkCreate(datesData, {
     returning: true,
   });
 

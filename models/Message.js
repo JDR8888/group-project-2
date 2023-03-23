@@ -14,6 +14,7 @@ Message.init(
     content: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "No message!",
     },
     sender_id: {
       type: DataTypes.INTEGER,
