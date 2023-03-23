@@ -8,7 +8,7 @@
     "gender": "Female",
     "birthday": "02/22/1985",
     "favorite_food": "Gnocci",
-    "location": "Upper East Side",
+    "location": "manhattan",
     "what_to_eat": "Italian",
     "profile_pic": "./assets/profile-pics/01"
   },
@@ -21,7 +21,7 @@
     "gender": "Trans",
     "birthday": "04/15/1994",
     "favorite_food": "Worms",
-    "location": "Gowanus",
+    "location": "brooklyn",
     "what_to_eat": "Japanese",
     "profile_pic": "./assets/profile-pics/02"
   },
@@ -34,8 +34,8 @@
     "gender": "Male",
     "birthday": "10/10/1995",
     "favorite_food": "Popsicles",
-    "location": "Bedstuy",
-    "what_to_eat": "Chopped Cheese",
+    "location": "brooklyn",
+    "what_to_eat": "indian",
     "profile_pic": "./assets/profile-pics/03"
   },
   {
@@ -47,8 +47,8 @@
     "gender": "Female",
     "birthday": "12/12/1925",
     "favorite_food": "Pizza",
-    "location": "East New York",
-    "what_to_eat": "Fritatas",
+    "location": "brooklyn",
+    "what_to_eat": "mexican",
     "profile_pic": "./assets/profile-pics/04"
   },
   {
@@ -60,8 +60,8 @@
     "gender": "Female",
     "birthday": "11/11/1989",
     "favorite_food": "Tots",
-    "location": "Astoria",
-    "what_to_eat": "Hot Pot",
+    "location": "queens",
+    "what_to_eat": "chinese",
     "profile_pic": "./assets/profile-pics/05"
   },
   {
@@ -73,8 +73,8 @@
     "gender": "Male",
     "birthday": "03/22/1990",
     "favorite_food": "Dim Sum",
-    "location": "Bushwick",
-    "what_to_eat": "Ramen",
+    "location": "brooklyn",
+    "what_to_eat": "japanese",
     "profile_pic": "./assets/profile-pics/06"
   }
 ]
