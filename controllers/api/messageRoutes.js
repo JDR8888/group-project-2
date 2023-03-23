@@ -1,9 +1,9 @@
-const router = require("express").Router();
-const { Message, User } = require("../../models");
-const { Op } = require("sequelize");
+const router = require('express').Router();
+const { Op } = require('sequelize');
+const { Message, User } = require('../../models');
 
 // Get a user's messages
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -19,12 +19,12 @@ router.get("/:id", async (req, res) => {
     res.json(messages);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 
 // Send a message from the current user to another user
-router.post("/:id", async (req, res) => {
+router.post('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { content } = req.body;
@@ -40,7 +40,7 @@ router.post("/:id", async (req, res) => {
     res.json(newMessage);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 
