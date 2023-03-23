@@ -1,6 +1,7 @@
 const User = require("./User");
 const Restaurant = require("./Restaurant");
 const Date = require("./Date");
+const Message = require("./Message");
 
 User.hasMany(Date, {
   foreign_key: "user_id",
@@ -8,6 +9,14 @@ User.hasMany(Date, {
 });
 
 Date.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+User.hasMany(Message, {
+  foreignKey: "user_id",
+});
+
+Message.belongsTo(User, {
   foreignKey: "user_id",
 });
 
@@ -32,4 +41,4 @@ Date.belongsTo(Restaurant, {
   foreignKey: "restaurant_id",
 });
 
-module.exports = { User, Restaurant, Date };
+module.exports = { User, Restaurant, Date, Message };
