@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Restaurant, Date } = require("../../models");
+const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   try {

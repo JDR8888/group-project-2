@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Restaurant, Date } = require("../models");
+const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   res.render("homepage", {
@@ -13,6 +14,12 @@ router.get("/login", async (req, res) => {
     title: "login",
   });
 });
+
+// router.get("/dating", async (req, res) => {
+//   res.render("dating", {
+//     title: "dating",
+//   });
+// });
 
 router.get("/dating", async (req, res) => {
   try {
@@ -30,17 +37,14 @@ router.get("/dating", async (req, res) => {
       },
     });
 
-    const displayDates = userData.map((users) => users.get({ plain: true }));
     const displayRestaurants = restaurantData.map((restaurants) =>
       restaurants.get({ plain: true })
     );
 
-    res.render("/dating", {
-      title: "Dating",
+    res.render("dating", {
       displayDates,
       displayRestaurants,
-      loggedIn: req.session.loggedIn,
-      name: req.session.name,
+      loggedIn: req.session.logged_in,
       title: "Dating",
     });
   } catch (err) {
