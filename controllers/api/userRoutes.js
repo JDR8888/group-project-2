@@ -74,6 +74,7 @@ router.post("/", async (req, res) => {
       location: req.body.location,
       what_to_eat: req.body.what_to_eat,
       profile_pic: req.body.profile_pic,
+      zodiac: req.body.zodiac,
     });
     req.session.save(() => {
       req.session.logged_in = true,
