@@ -15,13 +15,6 @@ router.get("/login", async (req, res) => {
 });
 
 router.get("/dating", async (req, res) => {
-  res.render("dating"),
-    {
-      title: "dating",
-    };
-});
-
-router.get("/dating", async (req, res) => {
   try {
     const userData = await User.findAll({
       where: {
@@ -48,6 +41,7 @@ router.get("/dating", async (req, res) => {
       displayRestaurants,
       loggedIn: req.session.loggedIn,
       name: req.session.name,
+      title: "Dating",
     });
   } catch (err) {
     res.status(500).json(err);
