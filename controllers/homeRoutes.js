@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { User, Restaurant, Date } = require("../models");
 
 router.get("/", async (req, res) => {
   res.render("homepage", {
@@ -14,10 +15,37 @@ router.get("/login", async (req, res) => {
 });
 
 router.get("/dating", async (req, res) => {
-  res.render("dating"),
-    {
-      title: "dating",
-    };
+  try {
+    const userData = await User.findAll({
+      where: {
+        what_to_eat: req.session.user.what_to_eat,
+        location: req.session.user.location,
+        id: { [Op.ne]: req.session.user.id },
+      },
+    });
+    const restaurantData = await Restaurant.findAll({
+      where: {
+        cuisine_description: req.session.user.what_to_eat,
+        boro: req.session.user.location,
+      },
+    });
+
+    const displayDates = userData.map((users) => users.get({ plain: true }));
+    const displayRestaurants = restaurantData.map((restaurants) =>
+      restaurants.get({ plain: true })
+    );
+
+    res.render("/dating", {
+      title: "Dating",
+      displayDates,
+      displayRestaurants,
+      loggedIn: req.session.loggedIn,
+      name: req.session.name,
+      title: "Dating",
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/signup", async (req, res) => {
