@@ -1,44 +1,79 @@
-const router = require('express').Router();
-const { User } = require('../../models');
+const router = require("express").Router();
+const { User } = require("../../models");
 
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: "Incorrect email or password, please try again" });
       return;
     }
 
-  const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: "Incorrect email or password, please try again" });
       return;
     }
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
 
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll();
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// will be done in the '/signup' path but leaving blank for now
+router.post('/', async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      bio: req.body.bio,
+      gender: req.body.gender,
+      birthday: req.body.birthday,
+      favorite_food: req.body.favorite_food,
+      location: req.body.location,
+      what_to_eat: req.body.what_to_eat,
+      profile_pic: req.body.profile_pic,
+    });
+
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    // });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 

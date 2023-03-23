@@ -3,6 +3,7 @@ const router = require("express").Router();
 router.get("/", async (req, res) => {
   res.render("homepage", {
     title: "Homepage",
+    logged_in: req.session.logged_in,
   });
 });
 
@@ -12,11 +13,18 @@ router.get("/login", async (req, res) => {
   });
 });
 
-router.get("/dating", async(req,res)=>{
-  res.render('dating'),{
-    title: "dating"
-  }
-})
+router.get("/dating", async (req, res) => {
+  res.render("dating"),
+    {
+      title: "dating",
+    };
+});
+
+router.get("/signup", async (req, res) => {
+  res.render("signup", {
+    title: "signup",
+  });
+});
 
 module.exports = router;
 
