@@ -1,7 +1,27 @@
 <h2>Dating Portal</h2>
-
+<h3>Other users in {{location}} that want {{what_to_eat}}</h3>
 <section id="dating results">
+    {{> user-details}}
+</section>
 
+<section>
+    <h3>Suggested {{what_to_eat}} Restaraunts:</h3>
+{{#each displayRestaurants as |restaraunt|}}
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{restaraunt.icon}}" class="card-img" alt="picture of food" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{restaraunt.name}}</h5>
+          <p class="card-text"><strong>{{restaraunt.dba}}</strong></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
 </section>
 
 <button>New Search

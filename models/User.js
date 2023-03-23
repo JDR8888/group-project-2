@@ -45,6 +45,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    zodiac: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     favorite_food: {
       type: DataTypes.STRING,
       allowNull: false,
