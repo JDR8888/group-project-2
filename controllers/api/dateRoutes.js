@@ -5,14 +5,15 @@ router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
       where: {
-        what_to_eat: "italian",
-        location: "upper east side",
+        what_to_eat: req.session.user.what_to_eat,
+        location: req.session.user.location,
+        id: { [Op.ne]: req.session.user.id },
       },
     });
     const restaurantData = await Restaurant.findAll({
       where: {
-        cuisine_description: "italian",
-        boro: "manhattan",
+        cuisine_description: req.session.user.what_to_eat,
+        boro: req.session.user.location,
       },
     });
     const comboData = [userData, restaurantData];
