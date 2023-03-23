@@ -75,10 +75,21 @@ router.post("/", async (req, res) => {
       what_to_eat: req.body.what_to_eat,
       profile_pic: req.body.profile_pic,
     });
-
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
-
+    req.session.save(() => {
+      req.session.logged_in = true,
+      req.session.user = {
+        id: userData.id,
+        name: userData.name,
+        location: userData.location,
+        zodiac: userData.zodiac,
+        bio: userData.bio,
+        gender: userData.gender,
+        birthday: userData.birthday,
+        favorite_food: userData.favorite_food,
+        what_to_eat: userData.what_to_eat,
+        profile_pic: userData.profile_pic,
+      };
+    });
     res.status(200).json(dbUserData);
     // });
   } catch (err) {
