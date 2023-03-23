@@ -32,7 +32,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Message.bulkCreate(datesData, {
+  await Message.bulkCreate(messageData, {
     returning: true,
   });
 

@@ -1,12 +1,12 @@
 [
   {
     "content": "Hi",
-    "sender_id": "2",
-    "reciever_id": "1"
+    "sender_id": 2,
+    "receiver_id": 1
   },
   {
     "content": "UYoooooo",
-    "sender_id": "5",
-    "reciever_id": "1"
+    "sender_id": 5,
+    "receiver_id": 1
   }
 ]

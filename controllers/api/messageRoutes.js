@@ -1,22 +1,18 @@
 const router = require("express").Router();
-const { Message } = require("../../models");
+const { Message, User } = require("../../models");
 const { Op } = require("sequelize");
-const db = require("../../models");
 
 // Get a user's messages
 router.get("/:id", async (req, res) => {
   try {
-    const { userId } = req.params;
+    const { id } = req.params;
 
     // Find the user's messages using the userId
     const messages = await Message.findAll({
       where: {
-        [db.Sequelize.Op.or]: [{ fromUserId: userId }, { toUserId: userId }],
+        [Op.or]: [{ sender_id: req.session.user.id }, { receiver_id: id }],
       },
-      include: [
-        { model: db.User, as: "fromUser" },
-        { model: db.User, as: "toUser" },
-      ],
+      include: [{ model: User }],
     });
 
     // Return the messages as JSON data
@@ -30,13 +26,13 @@ router.get("/:id", async (req, res) => {
 // Send a message from the current user to another user
 router.post("/:id", async (req, res) => {
   try {
-    const { reciever_id } = req.params;
+    const { id } = req.params;
     const { content } = req.body;
 
     // Create a new message and save it to the database
-    const newMessage = await db.Message.create({
+    const newMessage = await Message.create({
       sender_id: req.session.user.id,
-      reciever_id,
+      receiver_id: id,
       content,
     });
 
