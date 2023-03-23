@@ -21,10 +21,20 @@ router.post("/login", async (req, res) => {
       return;
     }
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.json({ user: userData, message: "You are now logged in!" });
+      req.session.logged_in = true,
+      req.session.user = {
+        id: userData.id,
+        name: userData.name,
+        location: userData.location,
+        zodiac: userData.zodiac,
+        bio: userData.bio,
+        gender: userData.gender,
+        birthday: userData.birthday,
+        favorite_food: userData.favorite_food,
+        what_to_eat: userData.what_to_eat,
+        profile_pic: userData.profile_pic,
+      };
+        res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -41,7 +51,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll();
     res.status(200).json(userData);
@@ -51,7 +61,7 @@ router.get('/', async (req, res) => {
 });
 
 // will be done in the '/signup' path but leaving blank for now
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
       name: req.body.name,
@@ -69,7 +79,7 @@ router.post('/', async (req, res) => {
     // req.session.save(() => {
     //   req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+    res.status(200).json(dbUserData);
     // });
   } catch (err) {
     console.log(err);

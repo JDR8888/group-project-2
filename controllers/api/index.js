@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const restaurantRoutes = require("./restaurantRoutes");
-const db = require('../../models');
+const dateRoutes = require("./dateRoutes");
+const db = require("../../models");
 
 router.use("/users", userRoutes);
 router.use("/restaurants", restaurantRoutes);
+router.use("/dates", dateRoutes);
 
 exports.getMatches = async (req, res) => {
   try {
@@ -15,15 +17,15 @@ exports.getMatches = async (req, res) => {
     const matches = await db.User.findAll({
       where: {
         location,
-        food_preferences
-      }
+        food_preferences,
+      },
     });
 
     // Return the matches as JSON data
     res.json(matches);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 };
 
