@@ -1,8 +1,10 @@
-<h2>Welcome to Love-Hungry!</h2>
-<h3>Please put in your info below</h3>
+<link rel="stylesheet" href="/css/signup.css"/>
 
-<form>
-    <div class="form-group">
+<h2 class="text-center m-4">Welcome to Love-Hungry!</h2>
+<h4 class="text-center">Please put in your info below</h4>
+
+<form class="d-flex p-2 justify-content-center">
+    <div class="form-group ml-4">
     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
     <div class="col-sm-10">
       <input type="text" class="form-control form-control-sm" id="user_name" placeholder="Full Name">
@@ -78,63 +80,65 @@
       </select>
       <div> </div>
       <h4 class="m-3">Select an avatar!</h4>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios1" value="/images/avatar_01.png" checked>
-        <label class="form-check-label" for="exampleRadios1">
-          {{!-- include avatar options to choose from --}}
-          <img src="/images/avatar_01.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input d-inline" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_02.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_02.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_03.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_03.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_04.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_04.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_05.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_05.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_06.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_06.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_07.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_07.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_08.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_08.png"></img>
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_09.png">
-        <label class="form-check-label" for="exampleRadios2">
-          <img src="/images/avatar_09.png"></img>
-        </label>
+      <div class="d-flex flex-wrap justify-content-evenly p-4">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios1" value="/images/avatar_01.png" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{!-- include avatar options to choose from --}}
+            <img src="/images/avatar_01.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input d-inline" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_02.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_02.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_03.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_03.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_04.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_04.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_05.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_05.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_06.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_06.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_07.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_07.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_08.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_08.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_09.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_09.png"></img>
+          </label>
+        </div>
       </div>
       <div class="col-auto d-flex justify-content-center m-4">
-        <button type="submit" class="btn btn-danger mb-3" id="signupBtn">Submit to Love</button>
+        <button type="submit" class="btn mb-3" id="signup-btn">Submit to Love</button>
       </div>
     </div>
 </form>
