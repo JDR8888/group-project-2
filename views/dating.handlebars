@@ -28,8 +28,46 @@
     </div>
     {{/each}}
   </section><br><br>
-  <div class="text-center ">
-    <a href=" #" class="btn btn-danger">go somewhere</a>
+  <!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color:#8e39aa; border:#8e39aa">
+  Get New Date Options
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Change cuisine preference and borrough</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-3">
+        &#127961;
+        <select class="custom-select col-sm-10 m-3" id="location">
+          <option name="location" value="Queens" selected>Queens</option>
+          <option name="location" value="Bronx">Bronx</option>
+          <option name="location" value="Manhattan">Manhattan</option>
+          <option name="location" value="Brooklyn">Brooklyn</option>
+          <option name="location" value="Staten Island">Staten Island</option>
+        </select>
+        &#127869;
+        <select class="custom-select custom-select-sm col-sm-10 m-3" id="what-to-eat">
+          <option value="Chinese">Chinese</option>
+          <option value="American">American</option>
+          <option value="Indian">Indian</option>
+          <option value="Thai" selected>Thai</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Pizza">Pizza</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
+        <button type="button" class="btn btn-primary">Show me Love</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <style>
     body{
