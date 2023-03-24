@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Op } = require('sequelize');
-const { User, Restaurant } = require('../models');
+const { User, Restaurant, Message } = require('../models');
 
 router.get('/', async (req, res) => {
   res.render('homepage', {
@@ -15,11 +15,29 @@ router.get('/login', async (req, res) => {
   });
 });
 
-// router.get("/dating", async (req, res) => {
-//   res.render("dating", {
-//     title: "dating",
-//   });
-// });
+router.get('/messages', async (req, res) => {
+  try {
+    const messages = await Message.findAll({
+      where: {
+        receiver_id: req.session.user.id,
+      },
+      include: [{ model: User, as: 'sender' }],
+    });
+
+    const displayMessages = messages.map((message) =>
+      message.get({ plain: true })
+    );
+
+    res.render('message-board', {
+      displayMessages,
+      loggedIn: req.session.logged_in,
+      title: 'Messages',
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
 
 router.get('/dating', async (req, res) => {
   try {
