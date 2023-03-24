@@ -25,6 +25,6 @@ N/A
 # Credits   
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com) 
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com) 
-  uses: node.js, handlebars, sequelize, bcrypt, mysql2, nodemon, express, session, dotenv 
+  uses: node.js, handlebars, sequelize, bcrypt, mysql2, nodemon, express, session, dotenv, vecteezy png images
 # License
 Please see the repo for license info

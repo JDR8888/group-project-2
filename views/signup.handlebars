@@ -17,6 +17,11 @@
     <div class="col-sm-10">
       <input type="text" class="form-control form-control-sm" id="user_password" placeholder="password">
     </div>
+    <div class="form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Favorite food/snack</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="favorite_food" placeholder="quesadillas? pork belly?">
+    </div>
     <div class="form-group col-sm-10 m-2">
     <label for="exampleFormControlTextarea1">Tell us a bit about yourself</label>
     <textarea class="form-control" id="user_bio" rows="4"></textarea>
@@ -27,36 +32,36 @@
       <input type="text" class="form-control form-control-sm" id="user_birthdate" placeholder="birthdate">
     </div>
     <div class="form-check form-check-inline m-3">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Female">
       <label class="form-check-label" for="inlineRadio1">Female</label>
       </div>
       <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Male">
       <label class="form-check-label" for="inlineRadio2">Male</label>
       </div>
       <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Other">
       <label class="form-check-label" for="inlineRadio3">Other</label>
     </div>
     <div class="form-group">
-      <select class="custom-select col-sm-10 m-3">
+      <select class="custom-select col-sm-10 m-3" id="location">
       <option selected>In which burrough do you live/like to eat?</option>
-      <option value="1">Queens</option>
-      <option value="2">Bronx</option>
-      <option value="3">Manhattan</option>
-      <option value="4">Brooklyn</option>
-      <option value="5">Staten Island</option>
+      <option name="location" value="Queens">Queens</option>
+      <option name="location" value="Bronx">Bronx</option>
+      <option name="location" value="Manhattan">Manhattan</option>
+      <option name="location" value="Brooklyn">Brooklyn</option>
+      <option name="location" value="Staten Island">Staten Island</option>
       </select>
-      <select class="custom-select custom-select-sm col-sm-10 m-3">
+      <select class="custom-select custom-select-sm col-sm-10 m-3" id="what-to-eat">
       <option selected>Which cuisine do you want as your default option?</option>
-      <option value="1">Chinese</option>
-      <option value="2">American</option>
-      <option value="3">Indian</option>
-      <option value="4">Thai</option>
-      <option value="5">Sushi</option>
-      <option value="6">Pizza</option>
+      <option value="Chinese">Chinese</option>
+      <option value="American">American</option>
+      <option value="Indian">Indian</option>
+      <option value="Thai">Thai</option>
+      <option value="Sushi">Sushi</option>
+      <option value="Pizza">Pizza</option>
       </select>
-      <select class="custom-select custom-select-sm col-sm-10 m-3">
+      <select class="custom-select custom-select-sm col-sm-10 m-3" id="zodiac">
       <option selected>What is your zodiac?</option>
       <option value="Aquarius">Aquarius</option>
       <option value="Aries">Aries</option>
@@ -74,56 +79,56 @@
       <div> </div>
       <h4 class="m-3">Select an avatar!</h4>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="/images/avatar_01.png" checked>
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios1" value="/images/avatar_01.png" checked>
         <label class="form-check-label" for="exampleRadios1">
           {{!-- include avatar options to choose from --}}
           <img src="/images/avatar_01.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input d-inline" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_02.png">
+        <input class="form-check-input d-inline" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_02.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_02.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_03.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_03.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_03.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_04.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_04.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_04.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_05.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_05.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_05.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_06.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_06.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_06.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_07.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_07.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_07.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_08.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_08.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_08.png"></img>
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="/images/avatar_09.png">
+        <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_09.png">
         <label class="form-check-label" for="exampleRadios2">
           <img src="/images/avatar_09.png"></img>
         </label>
