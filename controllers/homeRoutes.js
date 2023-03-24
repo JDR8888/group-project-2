@@ -63,6 +63,7 @@ router.get('/dating', async (req, res) => {
     res.render('dating', {
       what_to_eat: req.session.user.what_to_eat,
       location: req.session.user.location,
+      user_id: req.session.user.id,
       displayDates,
       displayRestaurants,
       loggedIn: req.session.logged_in,

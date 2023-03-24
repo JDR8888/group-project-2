@@ -3,11 +3,12 @@ const { Message, User } = require('../../models');
 
 // Get a user's messages
 router.get('/:id', async (req, res) => {
+  const { id } = req.params;
   try {
     // Find the user's messages using the userId
     const messages = await Message.findAll({
       where: {
-        receiver_id: req.session.user.id,
+        receiver_id: id,
       },
       include: [{ model: User, as: 'sender' }],
     });

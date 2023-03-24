@@ -4,13 +4,27 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
   const button = event.relatedTarget;
   // Extract info from data-bs-* attributes
   const recipient = button.getAttribute('data-bs-whatever');
-  // If necessary, you could initiate an Ajax request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = exampleModal.querySelector('.modal-title');
-  const modalBodyInput = exampleModal.querySelector('.modal-body input');
+  const userId = document.getElementById('userID').textContent;
+  const messageText = document.getElementById('message-text');
 
-  modalTitle.textContent = `New message to ${recipient}`;
-  modalBodyInput.value = recipient;
+  const sendButton = exampleModal.querySelector('.btn-primary');
+  sendButton.addEventListener('click', () => {
+    const content = messageText.value;
+
+    fetch(`/api/messages/${recipient}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        sender_id: userId,
+        receiver_id: recipient,
+        content,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Message sent:', data);
+      });
+  });
 });
