@@ -1,18 +1,15 @@
 const router = require('express').Router();
-const { Op } = require('sequelize');
 const { Message, User } = require('../../models');
 
 // Get a user's messages
 router.get('/:id', async (req, res) => {
   try {
-    const { id } = req.params;
-
     // Find the user's messages using the userId
     const messages = await Message.findAll({
       where: {
-        [Op.or]: [{ sender_id: req.session.user.id }, { receiver_id: id }],
+        receiver_id: req.session.user.id,
       },
-      include: [{ model: User }],
+      include: [{ model: User, as: 'sender' }],
     });
 
     // Return the messages as JSON data

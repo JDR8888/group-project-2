@@ -13,22 +13,34 @@ Date.belongsTo(User, {
 });
 
 User.hasMany(Message, {
-  foreignKey: 'user_id',
+  foreignKey: 'sender_id',
+  as: 'sender',
 });
 
 Message.belongsTo(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'sender_id',
+  as: 'sender',
+});
+
+User.hasMany(Message, {
+  foreignKey: 'receiver_id',
+  as: 'receiver',
+});
+
+Message.belongsTo(User, {
+  foreignKey: 'receiver_id',
+  as: 'receiver',
 });
 
 User.belongsToMany(User, {
-  through: { model: Date },
-  foreignKey: 'user_id',
+  through: { model: Message },
+  foreignKey: 'receiver_id',
   as: 'date_partners',
 });
 
 User.belongsToMany(User, {
-  through: { model: Date },
-  foreignKey: 'date_id',
+  through: { model: Message },
+  foreignKey: 'sender_id',
   as: 'date_asker',
 });
 
