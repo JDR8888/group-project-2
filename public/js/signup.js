@@ -26,7 +26,13 @@ const signupFormHandler = async (event) => {
     for (i of avatars) {
         if (i.checked === true) {profile_pic = i.value};
     };
-    
+    const answers = {name, email, password, favorite_food, bio, birthday, gender, location, what_to_eat, zodiac, profile_pic};
+    console.log(answers);
+    fetch("api/users", {
+        method: "POST",
+        body: JSON.stringify(answers),
+        headers: {"Content-Type": "application/json"},
+    });
 }; 
 
 //event listener for the signup button
