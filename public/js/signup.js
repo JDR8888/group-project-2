@@ -19,6 +19,7 @@ const signupFormHandler = async (event) => {
       gender = i.value;
     }
   }
+//   gender = genderOptions.filter((option) => option.checked)[0];
   // for the 'select' input dropdown boxes we can simply query the box that contains all of the options and get the value (which will be decided by whatever the user clicked in the dropdown)
   const location = document.getElementById('location').value;
   const what_to_eat = document.getElementById('what-to-eat').value;
