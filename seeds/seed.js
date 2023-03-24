@@ -11,7 +11,7 @@ const filteredData = rawRestaurantData01.filter(
     {
       dba,
       boro,
-      cuisine_description,
+      cuisine_description, // eslint-disable-line
       latitude,
       longitude,
       building,
@@ -21,7 +21,7 @@ const filteredData = rawRestaurantData01.filter(
   ) =>
     dba &&
     boro &&
-    cuisine_description &&
+    cuisine_description && // eslint-disable-line
     latitude &&
     longitude &&
     building &&

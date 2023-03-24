@@ -1,14 +1,15 @@
+/* eslint-disable */
 // everything that should happen when the submit button is clicked on the signup page after filling out/selecting values for stuff
 const signupFormHandler = async (event) => {
     event.preventDefault();
-    //for text/typed input we will just query the value in the input area
+    // for text/typed input we will just query the value in the input area
     const name = document.querySelector('#user_name').value;
     const email = document.querySelector('#user_email').value;
     const password = document.querySelector('#user_password').value;
     const bio = document.querySelector('#user_bio').value;
     const favorite_food = document.querySelector('#favorite_food').value;
     const birthday = document.querySelector('#user_birthdate').value;
-    //for radio-button options (gender and avatars) will query all buttons with same name ('gender' for gender buttons, 'avatar' for avatar buttons) 
+    // for radio-button options (gender and avatars) will query all buttons with same name ('gender' for gender buttons, 'avatar' for avatar buttons) 
     const genderOptions = document.getElementsByName('gender');
     let gender; 
     // loop through all options (radio buttons) for genderOptions and whichever button is 'checked' will decide the value of gender variable
@@ -20,7 +21,7 @@ const signupFormHandler = async (event) => {
     const what_to_eat = (document.getElementById('what-to-eat').value);
     const zodiac = (document.getElementById('zodiac').value);
 
-    //will do the same thing for avatars as did for gender options
+    // will do the same thing for avatars as did for gender options
     const avatars = document.getElementsByName('avatar');
     let profile_pic;
     for (i of avatars) {
@@ -35,6 +36,6 @@ const signupFormHandler = async (event) => {
     });
 }; 
 
-//event listener for the signup button
+// event listener for the signup button
 document.querySelector("#signup-btn").addEventListener("click", signupFormHandler);
 
