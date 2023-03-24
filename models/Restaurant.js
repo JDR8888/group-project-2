@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Restaurant extends Model {}
 
@@ -25,11 +25,23 @@ Restaurant.init(
       allowNull: false,
     },
     latitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(14, 12),
       allowNull: false,
     },
     longitude: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(14, 12),
+      allowNull: false,
+    },
+    building: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    street: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zipcode: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
@@ -38,7 +50,7 @@ Restaurant.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "restaurant",
+    modelName: 'restaurant',
   }
 );
 
