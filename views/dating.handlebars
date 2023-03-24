@@ -9,27 +9,8 @@
     {{> user-details}}
   </section>
   <section>
-    <div class="card-text d-flex justify-content-center card-body text-danger">
-      <h5>Suggested {{what_to_eat}} Restaraunts:</h5>
-    </div>
-    {{#each displayRestaurants as |restaraunt|}}
-    <div class="card mb-3">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="{{restaraunt.icon}}" class="card-img" alt="picture of food" />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{restaraunt.dba}}</h5>
-            <p class="card-text">{{restaraunt.building}} {{restaraunt.street}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </section><br><br>
-  <!-- Button trigger modal -->
-
+{{!-- update preferences modal starts here --}}
+ <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color:#8e39aa; border:#8e39aa">
   Get New Date Options
 </button>
@@ -56,18 +37,44 @@
           <option value="Chinese">Chinese</option>
           <option value="American">American</option>
           <option value="Indian">Indian</option>
-          <option value="Thai" selected>Thai</option>
+          <option value="Thai">Thai</option>
           <option value="Sushi">Sushi</option>
           <option value="Pizza">Pizza</option>
+          <option value="Albanian" selected>Albanian</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Carribean">Carribean</option>
+          <option value="Seafood">Seafood</option>
         </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
-        <button type="button" class="btn btn-primary">Show me Love</button>
+        <button type="button" class="btn" id="update-btn" style="background-color: #8e39aa; color:#e8dfeb">Show me Love</button>
       </div>
     </div>
   </div>
 </div>
+{{!-- update modal code over --}}
+
+    <div class="card-text d-flex justify-content-center card-body text-danger">
+      <h5>Suggested {{what_to_eat}} Restaraunts:</h5>
+    </div>
+    {{#each displayRestaurants as |restaraunt|}}
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{restaraunt.icon}}" class="card-img" alt="picture of food" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{restaraunt.name}}</h5>
+            <p class="card-text"><strong>{{restaraunt.dba}}</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </section><br><br>
+ 
 
   <style>
     body{

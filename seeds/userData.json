@@ -245,5 +245,18 @@
     "location": "brookyln",
     "what_to_eat": "Thai",
     "profile_pic": "/images/avatar_06.png"
+  },
+  {
+    "name": "Bobby Hill",
+    "email": "bobby@hillpropane.com",
+    "password": "propane",
+    "zodiac": "Scorpio",
+    "bio": "my daddy sells propane and propane accessories but i kinda like charcoal better.",
+    "gender": "Male",
+    "birthday": "01/22/1993",
+    "favorite_food": "Fruit pies",
+    "location": "Brooklyn",
+    "what_to_eat": "Pizza",
+    "profile_pic": "/images/avatar_04.png"
   }
 ]
