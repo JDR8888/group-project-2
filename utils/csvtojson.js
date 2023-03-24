@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const fs = require('fs');
 
 const convertCSVtoObject = async (filePath) => {
@@ -23,10 +25,12 @@ const convertCSVtoObject = async (filePath) => {
   const cleanOutput = output.filter(
     (restaurant) =>
       !(
-        restaurant[headers[0].toLowerCase()].includes('\\') ||
-        restaurant[headers[0].toLowerCase()].includes('/') ||
-        restaurant[headers[1].toLowerCase()].includes('\\') ||
-        restaurant[headers[1].toLowerCase()].includes('/')
+        restaurant.dba.includes('\\') ||
+        restaurant.dba.includes('/') ||
+        restaurant.boro.includes('\\') ||
+        restaurant.boro.includes('/') ||
+        isNaN(parseFloat(restaurant[headers[6].toLowerCase()])) ||
+        isNaN(parseFloat(restaurant[headers[7].toLowerCase()]))
       )
   );
 

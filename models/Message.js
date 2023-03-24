@@ -42,7 +42,12 @@ Message.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'message',
-    indexName: null,
+    indexes: [
+      {
+        unique: false,
+        fields: ['sender_id', 'receiver_id'],
+      },
+    ],
   }
 );
 
