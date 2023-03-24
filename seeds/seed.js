@@ -8,6 +8,7 @@ const datesData = require('./dateData.json');
 const messageData = require('./messageData.json');
 
 const filteredData = rawRestaurantData01.filter(
+
   ({
     dba,
     boro,
@@ -18,6 +19,7 @@ const filteredData = rawRestaurantData01.filter(
     street,
     zipcode,
   }) =>
+ 
     dba &&
     boro &&
     cuisine_description && // eslint-disable-line
