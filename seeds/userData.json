@@ -53,7 +53,7 @@
   },
   {
     "name": "Bernadine Lyndon",
-    "email": "Blyndon@yahoo.com",
+    "email": "CZ",
     "password": "kubrickschild",
     "zodiac": "Scorpio",
     "bio": "I never met a dog I didn't like",
@@ -76,6 +76,19 @@
     "location": "brooklyn",
     "what_to_eat": "chinese",
     "profile_pic": "./assets/profile-pics/06"
+  },
+  {
+    "name": "Halim Shini",
+    "email": "halimshini@hotmail.com",
+    "password": "password",
+    "zodiac": "Libra",
+    "bio": "",
+    "gender": "Male",
+    "birthday": "13/10/1993",
+    "favorite_food": "Tav Dheu",
+    "location": "brooklyn",
+    "what_to_eat": "Italian",
+    "profile_pic": "./assets/profile-pics/01"
   },
   {
     "name": "Monkey Babboon",
