@@ -36,12 +36,14 @@ User.belongsToMany(User, {
   through: { model: Message },
   foreignKey: 'receiver_id',
   as: 'date_partners',
+  unique: false,
 });
 
 User.belongsToMany(User, {
   through: { model: Message },
   foreignKey: 'sender_id',
   as: 'date_asker',
+  unique: false,
 });
 
 Restaurant.hasMany(Date, {
