@@ -1,3 +1,4 @@
+
 /* eslint-disable */
 // everything that should happen when the submit button is clicked on the signup page after filling out/selecting values for stuff
 const signupFormHandler = async (event) => {
@@ -39,3 +40,8 @@ const signupFormHandler = async (event) => {
 // event listener for the signup button
 document.querySelector("#signup-btn").addEventListener("click", signupFormHandler);
 
+
+// event listener for the signup button
+document
+  .querySelector('#signup-btn')
+  .addEventListener('click', signupFormHandler);

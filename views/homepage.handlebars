@@ -4,7 +4,9 @@
     <p class="lead">Connect with like-minded foodies and find your perfect match.</p>
     <hr class="my-4">
     <p>Join Love-Hungry today and start exploring new restaurants, cuisines, and experiences with someone special.</p>
+    {{#unless isAuthenticated}}
     <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up Now</a>
+    {{/unless}}
   </div>
 </div>
 
