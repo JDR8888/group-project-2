@@ -1,16 +1,15 @@
 <div class="card-title d-flex justify-content-center card-body text-danger ">
-  <h2 class=" ">Dating Portal</h2>
+  <h3 class=" ">Welcome to Dating Portal</h3>
 </div>
 <div class="card-text d-flex justify-content-center card-body text-danger ">
-  <h3>Other users in {{location}} that want {{what_to_eat}}</h3>
+  <h5>Other users in {{location}} that want {{what_to_eat}}</h5>
 </div>
   <section id="dating results">
     {{> user-details}}
   </section>
-
   <section>
     <div class="card-text d-flex justify-content-center card-body text-danger">
-    <h3>Suggested {{what_to_eat}} Restaraunts:</h3>
+    <h5>Suggested {{what_to_eat}} Restaraunts:</h5>
     </div>
     {{#each displayRestaurants as |restaraunt|}}
     <div class="card mb-3">
@@ -32,4 +31,6 @@
   <div class="text-center ">
     <a href=" #" class="btn btn-danger ">Go somewhere</a>
   </div>
+
+
 
