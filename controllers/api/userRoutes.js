@@ -105,6 +105,7 @@ router.put('/', async (req, res) => {
     );
 
     res.status(200).json(dbUserData);
+
   } catch (err) {
     console.log(err);
     res.status(417).json(err);

@@ -30,16 +30,16 @@ const signupFormHandler = async (event) => {
     };
     const answers = {name, email, password, favorite_food, bio, birthday, gender, location, what_to_eat, zodiac, profile_pic};
     console.log(answers);
-    fetch("api/users", {
+    const response = await fetch("api/users", {
         method: "POST",
         body: JSON.stringify(answers),
         headers: {"Content-Type": "application/json"},
     });
+    console.log(response);
+    if (response.ok) {
+        document.location.replace("/");
+    }
 }; 
-
-// event listener for the signup button
-document.querySelector("#signup-btn").addEventListener("click", signupFormHandler);
-
 
 // event listener for the signup button
 document
