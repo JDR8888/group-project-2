@@ -3,10 +3,14 @@ const { Op } = require('sequelize');
 const { User, Restaurant, Message } = require('../models');
 
 router.get('/', async (req, res) => {
-  res.render('homepage', {
-    title: 'Homepage',
-    logged_in: req.session.logged_in,
-  });
+  try {
+    res.render('homepage', {
+      title: 'Homepage',
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', async (req, res) => {
