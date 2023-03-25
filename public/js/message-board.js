@@ -1,21 +1,24 @@
 /* eslint-disable */
-
-const exampleModal = document.getElementById('reply');
+const recipientID = document.getElementById('fromID').textContent;
+const exampleModal = document.getElementById(`reply${recipientID}`);
 let button;
 
 exampleModal.addEventListener('show.bs.modal', (event) => {
+  const recipientID = document.getElementById('fromID').textContent;
   // Button that triggered the modal
   button = event.relatedTarget;
   // Extract info from data-bs-* attributes
-  const modalBodyContent = exampleModal.querySelector('.modal-body').innerHTML;
+  const modalBodyContent = exampleModal.querySelector(
+    `.modal-body${recipientID}`
+  ).innerHTML;
 
-  const messageFormEl = document.getElementById('message-form');
+  const messageFormEl = document.getElementById(`message-form${recipientID}`);
   console.log(messageFormEl);
 
   exampleModal.addEventListener('hide.bs.modal', (event) => {
     console.log('modal hidden');
     messageFormEl.reset();
-    const modalBody = exampleModal.querySelector('.modal-body');
+    const modalBody = exampleModal.querySelector(`.modal-body${recipientID}`);
     modalBody.innerHTML = modalBodyContent; // restore original modal body's content
   });
 
