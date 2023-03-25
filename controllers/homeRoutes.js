@@ -41,17 +41,29 @@ router.get('/messages', async (req, res) => {
 
 router.get('/dating', async (req, res) => {
   try {
+    const updatedUser = await User.findOne({
+      where: { id: req.session.user.id },
+    });
+
+    const updatedUserSerial = updatedUser.get({ plain: true });
+    console.log('userget', updatedUserSerial);
+
     const userData = await User.findAll({
       where: {
-        what_to_eat: req.session.user.what_to_eat,
-        location: req.session.user.location,
+        what_to_eat: updatedUserSerial.what_to_eat,
+        location: updatedUserSerial.location,
         id: { [Op.ne]: req.session.user.id },
       },
     });
+    console.log('userData', userData);
+    if (!userData) {
+      console.log('No matching users found');
+    }
+
     const restaurantData = await Restaurant.findAll({
       where: {
-        cuisine_description: req.session.user.what_to_eat,
-        boro: req.session.user.location,
+        cuisine_description: updatedUserSerial.what_to_eat,
+        boro: updatedUserSerial.location,
       },
     });
 
@@ -59,12 +71,11 @@ router.get('/dating', async (req, res) => {
     const displayRestaurants = restaurantData.map((restaurants) =>
       restaurants.get({ plain: true })
     );
-
-    console.log(displayRestaurants);
+    console.log('displayDates:', displayDates);
 
     res.render('dating', {
-      what_to_eat: req.session.user.what_to_eat,
-      location: req.session.user.location,
+      what_to_eat: updatedUserSerial.what_to_eat,
+      location: updatedUserSerial.location,
       user_id: req.session.user.id,
       displayDates,
       displayRestaurants,
