@@ -17,6 +17,9 @@ if (process.env.JAWSDB_URL) {
       define: {
         indexes: [],
       },
+      dialectOptions: {
+        connectTimeout: 60000,
+      },
     }
   );
 }
