@@ -3,7 +3,7 @@
     <h3 class=" ">Welcome to Dating Portal</h3><br><br><br>
   </div>
   <div class="card-text d-flex justify-content-center card-body text-danger ">
-    <h5>Other users in {{location}} that want {{what_to_eat}}</h5><br><br><br>
+    <h5>Other users in <span id="currentLoc">{{location}}</span> that want <span id="currentEat">{{what_to_eat}}</span></h5><br><br><br>
   </div>
   <section id="dating results" class="dflex">
     {{> user-details}}
@@ -20,7 +20,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Change cuisine preference and borrough</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Change cuisine preference and borough</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body fs-3">
