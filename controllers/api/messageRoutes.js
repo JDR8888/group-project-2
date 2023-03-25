@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 // Send a message from the current user to another user
 router.post('/', async (req, res) => {
   try {
-    const { content, receiver_id } = req.body;
+    const { content, receiver_id, } = req.body;
 
     // Create a new message and save it to the database
     const newMessage = await Message.create({

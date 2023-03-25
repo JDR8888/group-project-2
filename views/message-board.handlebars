@@ -3,25 +3,6 @@
   <div class="card-title d-flex justify-content-center card-body git  text-light  ">
     <h3>Message Board</h3>
   </div><br>
-  <div class='row'>
-    <div class=' text-light'>
-      <h5>Users</h5><br>
-      {{#each users}}
-      <div class='card mb-3'>
-        <div class='row no-gutters'>
-          <div class='col-md-4'>
-            <img src='{{this.profile_picture_url}}' class='card-img' alt='{{this.username}}' />
-          </div>
-          <div class='col-md-8'>
-            <div class='card-body'>
-              <h5 class='card-title'>{{this.username}}</h5><br>
-              <a href='/message-board/{{this.id}}' class='btn btn-primary'>View Messages</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{/each}}
-    </div>
 
     <div class='col-md-4  text-light'>
       <h5>Messages</h>
@@ -29,12 +10,12 @@
       {{#if displayMessages}}
       {{#each displayMessages as |message|}}
       <div class='card mb-3'>
-        <div class='card-body'>
-          <h5 class='card-title'>{{message.sender_id}}
-            to
-            {{message.receiver_id}}</h5>
-          <p class='card-text'>{{message.content}}</p>
+        <div class="message"class='card-body'>
+          <h5 class='card-title'>From: {{message.sender_id}}
+
+          <p class='card-text'>"{{message.content}}"</p>
         </div>
+        <button class='btn btn-primary btn-lg'>Reply</button>
       </div><br>
       {{/each}}
       {{else}}
@@ -57,3 +38,5 @@
     background-color: #C68CD9;
   }
 </style>
+
+<script src="/js/message-board.js"></script>

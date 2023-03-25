@@ -25,16 +25,16 @@ router.get('/messages', async (req, res) => {
       where: {
         receiver_id: req.session.user.id,
       },
-      include: [{ model: User, as: 'sender' }],
     });
+    console.log('messages', messages);
 
     const displayMessages = messages.map((message) =>
       message.get({ plain: true })
     );
-
+    console.log('displayMessages', displayMessages);
     res.render('message-board', {
       displayMessages,
-      loggedIn: req.session.logged_in,
+      logged_in: req.session.logged_in,
       title: 'Messages',
     });
   } catch (error) {
