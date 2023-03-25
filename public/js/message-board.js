@@ -44,8 +44,6 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Message sent:', data);
-        const sendButton = document.getElementById('sendmessage');
-        sendButton.remove();
         const modalBody = exampleModal.querySelector('.modal-body');
         modalBody.innerHTML = '<p>Message sent!</p>';
       });
