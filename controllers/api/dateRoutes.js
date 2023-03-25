@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 const { User, Restaurant } = require('../../models');
 
 router.get('/', async (req, res) => {
@@ -16,11 +16,14 @@ router.get('/', async (req, res) => {
         cuisine_description: req.session.user.what_to_eat,
         boro: req.session.user.location,
       },
+      order: Sequelize.literal('rand()'),
+      limit: 10,
     });
     const comboData = [userData, restaurantData];
     res.status(200).json(comboData);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 

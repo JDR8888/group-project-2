@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 const { User, Restaurant, Message } = require('../models');
 
 router.get('/', async (req, res) => {
@@ -82,6 +82,8 @@ router.get('/dating', async (req, res) => {
         cuisine_description: updatedUserSerial.what_to_eat,
         boro: updatedUserSerial.location,
       },
+      order: Sequelize.literal('rand()'),
+      limit: 10,
     });
 
     const displayDates = userData.map((users) => users.get({ plain: true }));
