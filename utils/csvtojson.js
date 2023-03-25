@@ -22,17 +22,18 @@ const convertCSVtoObject = async (filePath) => {
     output.push(newRecord);
   }
 
-  const cleanOutput = output.filter(
-    (restaurant) =>
-      !(
-        restaurant.dba.includes('\\') ||
-        restaurant.dba.includes('/') ||
-        restaurant.boro.includes('\\') ||
-        restaurant.boro.includes('/') ||
-        isNaN(parseFloat(restaurant[headers[6].toLowerCase()])) ||
-        isNaN(parseFloat(restaurant[headers[7].toLowerCase()]))
-      )
-  );
+  const cleanOutput = output.filter((restaurant) => {
+    const latitude = Number(restaurant[headers[6].toLowerCase()]);
+    const longitude = Number(restaurant[headers[7].toLowerCase()]);
+    return !(
+      restaurant.dba.includes('\\') ||
+      restaurant.dba.includes('/') ||
+      restaurant.boro.includes('\\') ||
+      restaurant.boro.includes('/') ||
+      isNaN(latitude) ||
+      isNaN(longitude)
+    );
+  });
 
   await fs.promises.writeFile(
     './restaurant-list.json',
