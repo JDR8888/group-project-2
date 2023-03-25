@@ -1,16 +1,51 @@
+/* eslint-disable */
+
 const exampleModal = document.getElementById('exampleModal');
+let button;
+
 exampleModal.addEventListener('show.bs.modal', (event) => {
   // Button that triggered the modal
-  const button = event.relatedTarget;
+  button = event.relatedTarget;
   // Extract info from data-bs-* attributes
-  const recipient = button.getAttribute('data-bs-whatever');
-  // If necessary, you could initiate an Ajax request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = exampleModal.querySelector('.modal-title');
-  const modalBodyInput = exampleModal.querySelector('.modal-body input');
+  const modalBodyContent = exampleModal.querySelector('.modal-body').innerHTML;
 
-  modalTitle.textContent = `New message to ${recipient}`;
-  modalBodyInput.value = recipient;
+  const messageFormEl = document.getElementById('message-form');
+  console.log(messageFormEl);
+
+  exampleModal.addEventListener('hide.bs.modal', (event) => {
+    console.log('modal hidden');
+    messageFormEl.reset();
+    const modalBody = exampleModal.querySelector('.modal-body');
+    modalBody.innerHTML = modalBodyContent; // restore original modal body's content
+  });
+
+  messageFormEl.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('submitting');
+
+    const recipient = button.getAttribute('data-bs-whatever');
+    const userId = document.getElementById('userID').textContent;
+    const content = document.getElementById('message-text').value;
+
+    const message = {
+      sender_id: userId,
+      receiver_id: recipient,
+      content,
+    };
+    console.log(message);
+
+    fetch(`/api/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Message sent:', data);
+        const modalBody = exampleModal.querySelector('.modal-body');
+        modalBody.innerHTML = '<p>Message sent!</p>';
+      });
+  });
 });

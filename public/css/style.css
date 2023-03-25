@@ -1,4 +1,8 @@
-.nav-link{
-    font-size: larger;
-    color: white;
+.nav-link {
+  font-size: larger;
+  color: white;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,4 +1,7 @@
+<h1 id='userID' class='hidden'>{{user_id}}</h1>
+
 {{#each displayDates as |date|}}
+  <p id='resultID' class='hidden'>{{date.id}}</p>
   <div class='card mb-3 justify-content-center'>
     <div class='row no-gutters'>
       <div class='col-md-2'>
@@ -16,7 +19,7 @@
             class='btn btn-primary'
             data-bs-toggle='modal'
             data-bs-target='#exampleModal'
-            data-bs-whatever='{{date.name}}'
+            data-bs-whatever='{{date.id}}'
           >Invite {{date.name}} to dinner</button>
 
           <div
@@ -26,7 +29,8 @@
             aria-labelledby='exampleModalLabel'
             aria-hidden='true'
           >
-            <div class='modal-dialog'>
+
+            <form id='message-form' class='modal-dialog'>
               <div class='modal-content'>
                 <div class='modal-header'>
                   <h1 class='modal-title fs-5' id='exampleModalLabel'>New
@@ -39,29 +43,25 @@
                   ></button>
                 </div>
                 <div class='modal-body'>
-                  <form>
-                    <div class='mb-3'>
-                      <label
-                        for='message-text'
-                        class='col-form-label'
-                      >Message:</label>
-                      <textarea
-                        class='form-control'
-                        id='message-text'
-                      ></textarea>
-                    </div>
-                  </form>
+                  <div class='mb-3'>
+                    <label
+                      for='message-text'
+                      class='col-form-label'
+                    >Message:</label>
+                    <textarea class='form-control' id='message-text'></textarea>
+                  </div>
                 </div>
                 <div class='modal-footer'>
                   <button
+                    id='close'
                     type='button'
                     class='btn btn-secondary'
                     data-bs-dismiss='modal'
                   >Close</button>
-                  <button type='button' class='btn btn-primary'>Send message</button>
+                  <button type='submit' class='btn btn-primary'>Send message</button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

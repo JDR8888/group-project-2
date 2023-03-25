@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Message extends Model {}
 
@@ -14,22 +14,25 @@ Message.init(
     content: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "No message!",
+      unique: false,
+      defaultValue: 'No message!',
     },
     sender_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      unique: false,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
     },
     receiver_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      unique: false,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
     },
   },
@@ -38,7 +41,13 @@ Message.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "message",
+    modelName: 'message',
+    indexes: [
+      {
+        unique: false,
+        fields: ['sender_id', 'receiver_id'],
+      },
+    ],
   }
 );
 
