@@ -51,20 +51,23 @@
                   href='/history'
                 >History</a></h4>
             </li>
-            <li class='nav-item'>
-              <h4><a
-                  class='nav-link active text-light'
-                  aria-current='page'
-                  href='/login'
-                >Login</a></h4>
-            </li>
-            <li class='nav-item'>
-              <h4><a
-                  class='nav-link active text-light'
-                  id='logout'
-                  aria-current='page'
-                >Logout</a></h4>
-            </li>
+            {{#if logged_in}}
+              <li class='nav-item'>
+                <h4><a
+                    class='nav-link active text-light'
+                    id='logout'
+                    aria-current='page'
+                  >Logout</a></h4>
+              </li>
+            {{else}}
+              <li class='nav-item'>
+                <h4><a
+                    class='nav-link active text-light'
+                    aria-current='page'
+                    href='/login'
+                  >Login</a></h4>
+              </li>
+            {{/if}}
           </ul>
           <form class='d-flex' role='search'>
             <input
