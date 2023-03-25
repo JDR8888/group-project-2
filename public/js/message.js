@@ -34,7 +34,7 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
     };
     console.log(message);
 
-    fetch(`/api/messages`, {
+    fetch('/api/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

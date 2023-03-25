@@ -23,7 +23,6 @@ router.post('/login', async (req, res) => {
       return;
     }
     req.session.save(() => {
-      
       req.session.logged_in = true;
       req.session.user = {
         id: userData.id,
@@ -93,20 +92,29 @@ router.put('/', async (req, res) => {
     console.log(req.session.user);
     const dbUserData = await User.update(
       {
-      location: req.body.location, what_to_eat: req.body.what_to_eat
-    }, 
-    {
-      where: {
-      id: req.session.user.id 
-    }
-  });
-    
+        location: req.body.location,
+        what_to_eat: req.body.what_to_eat,
+      },
+      {
+        where: {
+          id: req.session.user.id,
+        },
+      }
+    );
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+      req.session.user = {
+        location: dbUserData.location,
+        what_to_eat: dbUserData.what_to_eat,
+      };
+    });
+
     res.status(200).json(dbUserData);
   } catch (err) {
     console.log(err);
     res.status(417).json(err);
   }
-  
-})
+});
 
 module.exports = router;

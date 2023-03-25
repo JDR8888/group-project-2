@@ -60,6 +60,8 @@ router.get('/dating', async (req, res) => {
       restaurants.get({ plain: true })
     );
 
+    console.log(displayRestaurants);
+
     res.render('dating', {
       what_to_eat: req.session.user.what_to_eat,
       location: req.session.user.location,
