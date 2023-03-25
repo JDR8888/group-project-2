@@ -39,8 +39,12 @@ router.get('/messages', async (req, res) => {
   }
 });
 
+// eslint-disable-next-line consistent-return
 router.get('/dating', async (req, res) => {
   try {
+    if (!req.session.user) {
+      return res.redirect('/login');
+    }
     const updatedUser = await User.findOne({
       where: { id: req.session.user.id },
     });
