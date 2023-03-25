@@ -36,18 +36,22 @@ Date.belongsTo(Restaurant, {
 
 User.hasMany(Message, {
   foreignKey: 'sender_id',
+  constraints: false,
 });
 
 User.hasMany(Message, {
   foreignKey: 'receiver_id',
+  constraints: false,
 });
 
 Message.belongsTo(User, {
+  constraints: false,
   foreignKey: 'sender_id',
   as: 'sender',
 });
 
 Message.belongsTo(User, {
+  constraints: false,
   foreignKey: 'receiver_id',
   as: 'receiver',
 });
