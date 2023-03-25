@@ -1,15 +1,17 @@
+/* eslint-disable */
+
 const router = require('express').Router();
-const { Message, User } = require('../../models');
+const { Message } = require('../../models');
 
 // Get a user's messages
 router.get('/:id', async (req, res) => {
+  const { id } = req.params;
   try {
     // Find the user's messages using the userId
     const messages = await Message.findAll({
       where: {
-        receiver_id: req.session.user.id,
+        receiver_id: id,
       },
-      include: [{ model: User, as: 'sender' }],
     });
 
     // Return the messages as JSON data
@@ -21,15 +23,14 @@ router.get('/:id', async (req, res) => {
 });
 
 // Send a message from the current user to another user
-router.post('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    const { id } = req.params;
-    const { content } = req.body;
+    const { content, receiver_id } = req.body;
 
     // Create a new message and save it to the database
     const newMessage = await Message.create({
       sender_id: req.session.user.id,
-      receiver_id: id,
+      receiver_id,
       content,
     });
 
