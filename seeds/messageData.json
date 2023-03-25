@@ -10,6 +10,16 @@
     "receiver_id": 6
   },
   {
+    "content": "Hey asshole!",
+    "sender_id": 1,
+    "receiver_id": 6
+  },
+  {
+    "content": "I'd never get dinner with you!",
+    "sender_id": 2,
+    "receiver_id": 6
+  },
+  {
     "content": "UYoooooo",
     "sender_id": 1,
     "receiver_id": 5

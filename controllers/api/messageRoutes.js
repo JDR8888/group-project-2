@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 const router = require('express').Router();
-const { Message } = require('../../models');
+const { Message, User } = require('../../models');
 
 // Get a user's messages
 router.get('/:id', async (req, res) => {
@@ -11,6 +11,10 @@ router.get('/:id', async (req, res) => {
     const messages = await Message.findAll({
       where: {
         receiver_id: id,
+      },
+      include: {
+        model: User,
+        as: 'sender',
       },
     });
 
@@ -25,7 +29,7 @@ router.get('/:id', async (req, res) => {
 // Send a message from the current user to another user
 router.post('/', async (req, res) => {
   try {
-    const { content, receiver_id, } = req.body;
+    const { content, receiver_id } = req.body;
 
     // Create a new message and save it to the database
     const newMessage = await Message.create({

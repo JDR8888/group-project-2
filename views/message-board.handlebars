@@ -11,27 +11,94 @@
       {{#each displayMessages as |message|}}
       <div class='card mb-3'>
         <div class="message"class='card-body'>
-          <h5 class='card-title'>From: {{message.sender_id}}
-
+          <h5 class='card-title'>From: {{message.sender.name}} 
           <p class='card-text'>"{{message.content}}"</p>
-        </div>
-        <button class='btn btn-primary btn-lg'>Reply</button>
+                    <button
+              type='button'
+              class='btn btn-primary'
+              data-bs-toggle='modal'
+              data-bs-target='#reply'
+              data-bs-whatever='{{message.sender.id}}'
+            >Reply to {{message.sender.name}}</button> <br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
+  View {{message.sender.name}}'s Profile
+</button>   
+</div>    
       </div><br>
+
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+                  <img
+            src='{{message.sender.profile_pic}}'
+            class='img-thumbnail'
+            alt='{{message.sender.name}}'
+          />
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body message">
+        <p class='card-text'><strong>{{message.sender.name}}</strong></p>
+                   <p class='card-text'><strong>Location:</strong> {{message.sender.bio}}</p>
+            <p class='card-text'><strong>Gender:</strong> {{message.sender.gender}}</p>
+            <p class='card-text'><strong>Zodiac Sign:</strong>
+              {{message.sender.zodiac}}</p>
+            <p class='card-text'><strong>Bio:</strong> {{message.sender.bio}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p id="replyUser" class="hidden">{{message.receiver_id}}</p>
+<div
+              class='modal fade'
+              id='reply'
+              tabindex='-1'
+              aria-labelledby='replyLabel'
+              aria-hidden='true'
+            >
+
+              <form id='message-form' class='modal-dialog'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h1 class='modal-title fs-5 message' id='exampleModalLabel'>Reply to {{message.sender.name}}</h1>
+                    <button
+                      type='button'
+                      class='btn-close'
+                      data-bs-dismiss='modal'
+                      aria-label='Close'
+                    ></button>
+                  </div>
+                  <div class='modal-body message'>
+                    <div class='mb-3'>
+                      <label
+                        for='message-text'
+                        class='col-form-label message'
+                      >Message:</label>
+                      <textarea
+                        class='form-control'
+                        id='message-text'
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class='modal-footer'>
+                    <button
+                      id='close'
+                      type='button'
+                      class='btn btn-secondary message'
+                      data-bs-dismiss='modal'
+                    >Close</button>
+                    <button id="sendmessage" type='submit' class='btn btn-primary'>Send message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
       {{/each}}
       {{else}}
       <p>No messages yet.</p>
       {{/if}}
-
-      {{!-- <form action='/api/messages/{{user.id}}' method='POST'>
-        <div class='form-group'><br>
-          <label for='message'>New Message:</label>
-          <textarea class='form-control' id='message' name='message' rows='3'></textarea>
-         <div class="text-left">
-      <a class="btn btn-danger btn-lg " href="/signup" role="button">Send</a>
-    </div>
-    </div>
-  </div>
-</div> --}}
 
 <style>
   body {

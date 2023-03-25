@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   res.render('login', {
+    logged_in: req.session.logged_in,
     title: 'login',
   });
 });
@@ -24,6 +25,10 @@ router.get('/messages', async (req, res) => {
     const messages = await Message.findAll({
       where: {
         receiver_id: req.session.user.id,
+      },
+      include: {
+        model: User,
+        as: 'sender',
       },
     });
     console.log('messages', messages);
@@ -87,7 +92,7 @@ router.get('/dating', async (req, res) => {
       user_id: req.session.user.id,
       displayDates,
       displayRestaurants,
-      loggedIn: req.session.logged_in,
+      logged_in: req.session.logged_in,
       title: 'Dating',
     });
   } catch (err) {
