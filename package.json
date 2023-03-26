@@ -5,6 +5,8 @@
   "scripts": {
     "test": "eslint --ext .js ./",
     "start": "node server.js",
+    "deploy": "npm run seed && npm run drop-index && git push heroku master",
+    "drop-index": "sequelize db:query 'DROP INDEX `message_sender_id_receiver_id_unique` ON `message`;'",
     "seed": "node seeds/seed.js",
     "watch": "nodemon server.js",
     "prepare": "husky install"
