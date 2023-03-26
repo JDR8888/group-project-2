@@ -29,7 +29,28 @@
 {{/each}}
 
      </section><br><br>
+<!-- Add the script to load the maps for each restaurant card -->
+<script type='text/javascript'>
+  function loadMap(element) {
+    var lat = parseFloat(element.dataset.lat);
+    var lng = parseFloat(element.dataset.lng);
+    var restaurantId = element.dataset.restaurantId;
 
+    var map = new Microsoft.Maps.Map('#map' + restaurantId, {
+      credentials: 'AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r',
+      center: new Microsoft.Maps.Location(lat, lng),
+      zoom: 14
+    });
+
+    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+    map.entities.push(pushpin);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var restaurantCards = document.querySelectorAll('.card[data-lat][data-lng][data-restaurant-id]');
+    restaurantCards.forEach(loadMap);
+  });
+</script>
 
 {{!-- update preferences modal starts here --}}
  <!-- Button trigger modal -->
