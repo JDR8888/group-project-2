@@ -46,10 +46,10 @@
     map.entities.push(pushpin);
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  function initMap() {
     var restaurantCards = document.querySelectorAll('.card[data-lat][data-lng][data-restaurant-id]');
     restaurantCards.forEach(loadMap);
-  });
+  }
 </script>
 
 {{!-- update preferences modal starts here --}}
