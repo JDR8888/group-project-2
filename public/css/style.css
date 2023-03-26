@@ -1,9 +1,9 @@
 .fancy {
-  font-family: "Great Vibes";
+  font-family: 'Great Vibes';
 }
 .secondary-text {
-  font-family: "Raleway";
-  color:#8e39aa;
+  font-family: 'Raleway';
+  color: #8e39aa;
 }
 .fancy-btn {
   background-color: #8e39aa;
@@ -37,4 +37,5 @@
 
 .red {
   color: red;
+  text-decoration: red wavy underline;
 }

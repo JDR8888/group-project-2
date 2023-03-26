@@ -14,7 +14,7 @@
         </div>
         <div class='col-md-8'>
           <div class='card-body'>
-            <h5 class='card-title'>{{date.name}}</h5>
+            <h5 id="dateName{{date.id}}"class='card-title'>{{date.name}}</h5>
             <p class='card-text'><strong>Gender:</strong> {{date.gender}}</p>
             <p class='card-text'><strong>Zodiac Sign:</strong>
               {{date.zodiac}}</p>
@@ -28,7 +28,7 @@
             >Invite {{date.name}} to dinner</button>
 
             <div
-              class='modal fade'
+              class='modal fade examplemodal'
               id='exampleModal'
               tabindex='-1'
               aria-labelledby='exampleModalLabel'
@@ -38,8 +38,8 @@
               <form id='message-form' class='modal-dialog'>
                 <div class='modal-content'>
                   <div class='modal-header'>
-                    <h1 class='modal-title fs-5' id='exampleModalLabel'>New
-                      message</h1>
+                    <h1 id="headerText"class='modal-title fs-5' id='exampleModalLabel'>Message
+                      {{date.name}}</h1>
                     <button
                       type='button'
                       class='btn-close'
