@@ -8,6 +8,10 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
   button = event.relatedTarget;
   // Extract info from data-bs-* attributes
   const modalBodyContent = exampleModal.querySelector('.modal-body').innerHTML;
+  const recipient = button.getAttribute('data-bs-whatever');
+  const dateName = document.getElementById(`dateName${recipient}`).textContent;
+  const header = document.getElementById(`headerText`);
+  header.textContent = `Message ${dateName}`;
 
   const messageFormEl = document.getElementById('message-form');
   console.log(messageFormEl);
@@ -17,13 +21,15 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
     messageFormEl.reset();
     const modalBody = exampleModal.querySelector('.modal-body');
     modalBody.innerHTML = modalBodyContent; // restore original modal body's content
+    const sendBut = document.getElementById('sendbutton');
+    sendBut.classList.remove('hidden');
   });
 
   messageFormEl.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log('submitting');
     const sendBut = document.getElementById('sendbutton');
-    sendBut.remove();
+    sendBut.classList.add('hidden');
 
     const recipient = button.getAttribute('data-bs-whatever');
     const userId = document.getElementById('userID').textContent;
