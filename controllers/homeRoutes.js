@@ -44,6 +44,7 @@ router.get('/messages', async (req, res) => {
     res.render('message-board', {
       displayMessages,
       logged_in: req.session.logged_in,
+      user_id: req.session.user.id,
       title: 'Messages',
     });
   } catch (error) {
