@@ -17,7 +17,7 @@
               type='button'
               class='btn btn-primary'
               data-bs-toggle='modal'
-              data-bs-target='#reply{{message.sender.id}}'
+              data-bs-target='#reply'
               data-bs-whatever='{{message.sender.id}}'
             >Reply to {{message.sender.name}}</button> <br>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal{{message.sender.id}}">
@@ -38,6 +38,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body message">
+        <p id="senderName{{message.sender.id}}" class="hidden">{{message.sender.name}}</p>
         <p class='card-text'><strong>{{message.sender.name}}</strong></p>
                    <p class='card-text'><strong>Location:</strong> {{message.sender.location}}</p>
             <p class='card-text'><strong>Gender:</strong> {{message.sender.gender}}</p>
@@ -55,16 +56,16 @@
 <p id="replyUser" class="hidden">{{message.receiver_id}}</p>
 <div
               class='modal fade'
-              id='reply{{message.sender.id}}'
+              id='reply'
               tabindex='-1'
               aria-labelledby='replyLabel'
               aria-hidden='true'
             >
 
-              <form id='message-form{{message.sender.id}}' class='modal-dialog'>
+              <form id='message-form' class='modal-dialog'>
                 <div class='modal-content'>
                   <div class='modal-header'>
-                    <h1 class='modal-title fs-5 message' id='exampleModalLabel'>Reply to {{message.sender.name}}</h1>
+                    <h1 class='modal-title fs-5 message' id='replyHeader'>Reply to {{message.sender.name}}</h1>
                     <button
                       type='button'
                       class='btn-close'
@@ -72,7 +73,7 @@
                       aria-label='Close'
                     ></button>
                   </div>
-                  <div class='modal-body{{message.sender.id}} message'>
+                  <div class='modal-body message'>
                     <div class='mb-3'>
                       <label
                         for='message-text'
