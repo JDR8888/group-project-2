@@ -7,7 +7,9 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js",
     "watch": "nodemon server.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npm run seed && npm run drop-index && git push heroku master",
+    "drop-index": "sequelize db:query 'DROP INDEX `message_sender_id_receiver_id_unique` ON `message`;'"
   },
   "keywords": [],
   "author": "",
