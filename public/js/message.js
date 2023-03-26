@@ -22,6 +22,8 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
   messageFormEl.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log('submitting');
+    const sendBut = document.getElementById('sendbutton');
+    sendBut.remove();
 
     const recipient = button.getAttribute('data-bs-whatever');
     const userId = document.getElementById('userID').textContent;
