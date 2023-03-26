@@ -1,5 +1,5 @@
 <div class='jumbotron jumbotron-fluid'>
-  <div class='container'>
+  <div class='container p-4'>
     <h1 class='display-4'>Find Love through Food &#129346; </h1>
     <p class='lead'>Connect with like-minded foodies and find your perfect
       match.</p>
@@ -8,12 +8,12 @@
       experiences with someone special.</p>
     {{#if logged_in}}
       <div class='text-center'>
-        <a class='btn btn-primary btn-lg' href='/dating' role='button'>Find A
+        <a class='btn btn-lg fancy-btn' href='/dating' role='button'>Find A
           Date</a>
       </div>
     {{else}}
       <div class='text-center'>
-        <a class='btn btn-danger btn-lg' href='/signup' role='button'>Sign Up
+        <a class='btn btn-lg fancy-btn' href='/signup' role='button'>Sign Up
           Now</a>
       </div>
     {{/if}}
@@ -21,20 +21,20 @@
 </div>
 
 <div class='container'>
-  <h2>How It Works</h2>
+  {{!-- <h2>How It Works</h2> --}}
   <div class='row'>
     <div class='col-md-4'>
-      <h4>Create Your Profile</h4>
+      <h4 class="fancy purple-text">Create Your Profile</h4>
       <p>Get started by creating a profile that showcases your unique
         personality and food preferences.</p>
     </div>
     <div class='col-md-4'>
-      <h4>Explore and Connect</h4>
+      <h4 class="fancy purple-text">Explore and Connect</h4>
       <p>Browse through other users' profiles and connect with people who share
         your passion for food and adventure.</p>
     </div>
     <div class='col-md-4'>
-      <h4>Plan Your Next Date</h4>
+      <h4 class="fancy purple-text">Plan Your Next Date</h4>
       <p>Use our platform to find and book reservations at the best restaurants
         in town, and impress your date with your food knowledge and taste.</p>
     </div>

@@ -11,6 +11,9 @@
       integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD'
       crossorigin='anonymous'
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital@1&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/css/style.css' />
     <title>{{title}}</title>
   </head>
@@ -18,13 +21,14 @@
   <body>
     <nav class='navbar navbar-expand-lg' style='background-color: #C68CD9'>
       <div class='container-fluid'>
+        
+        <a class='navbar-brand' href='/'>
         <img
           src='/images/Love-hungry-1.png'
           alt='logo'
-          height='100'
-          width='100'
-        />
-        <a class='navbar-brand' href='#'></a>
+          height='150'
+          width='150'
+        /></a>
         <button
           class='navbar-toggler'
           type='button'
@@ -40,37 +44,41 @@
           <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
             <li class='nav-item'>
               <h4><a
-                  class='nav-link active text-light'
+                  class='nav-link active text-light fancy'
                   aria-current='page'
                   href='/dating'
                 >Dating</a></h4>
             </li>
             <li class='nav-item'>
               <h4><a
+
+                  class='nav-link text-light fancy'
+
                   id='messageTab'
-                  class='nav-link text-light'
+             
                   href='/messages'
                 >Messages</a></h4>
             </li>
             {{#if logged_in}}
               <li class='nav-item'>
                 <h4><a
-                    class='nav-link active text-light'
+                    class='nav-link active text-light fancy'
                     id='logout'
                     aria-current='page'
+                    href=""
                   >Logout</a></h4>
               </li>
             {{else}}
               <li class='nav-item'>
                 <h4><a
-                    class='nav-link active text-light'
+                    class='nav-link active text-light fancy'
                     aria-current='page'
                     href='/login'
                   >Login</a></h4>
               </li>
             {{/if}}
           </ul>
-          <form class='d-flex' role='search'>
+          {{!-- <form class='d-flex' role='search'>
             <input
               class='form-control me-2'
               type='search'
@@ -81,7 +89,7 @@
               class='btn btn-outline-success'
               type='submit'
             >Search</button>
-          </form>
+          </form> --}}
         </div>
       </div>
     </nav>

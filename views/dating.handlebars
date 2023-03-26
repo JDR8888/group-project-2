@@ -1,9 +1,9 @@
 
-  <div class="card-title d-flex justify-content-center card-body text-danger ">
-    <h3 class=" ">Welcome to Dating Portal</h3><br><br><br>
+  <div class="card-title d-flex justify-content-center card-body">
+    <h2 class="fancy purple-text">Welcome to the Dating Portal</h3><br><br><br>
   </div>
   <div class="card-text d-flex justify-content-center card-body text-danger ">
-    <h5>Other users in <span id="currentLoc">{{location}}</span> that want <span id="currentEat">{{what_to_eat}}</span></h5><br><br><br>
+    <h5 class="secondary-text">Other users in <span id="currentLoc">{{location}}</span> that want <span id="currentEat">{{what_to_eat}}</span></h5><br><br><br>
   </div>
   <section id="dating results" class="dflex">
     {{> user-details}}
@@ -56,7 +56,7 @@
 {{!-- update modal code over --}}
 
     <div class="card-text d-flex justify-content-center card-body text-danger">
-      <h5>Suggested {{what_to_eat}} Restaraunts:</h5>
+      <h5 class="secondary-text">Suggested {{what_to_eat}} Restaraunts:</h5>
     </div>
     {{#each displayRestaurants as |restaraunt|}}
     <div class="card mb-3">
