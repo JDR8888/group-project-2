@@ -36,6 +36,14 @@
         var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
         map.entities.push(pushpin);
       }
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.defer = true;
+      script.src = 'https://www.bing.com/api/maps/mapcontrol?callback=loadMap{{restaurant.id}}&key=AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r';
+      document.body.appendChild(script);
+    </script>
+  </div>
     {{/each}}
      </section><br><br>
 
