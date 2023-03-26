@@ -1,50 +1,33 @@
-
-  <div class="card-title d-flex justify-content-center card-body">
-    <h2 class="fancy purple-text">Welcome to the Dating Portal</h3><br><br><br>
-  </div>
-  <div class="card-text d-flex justify-content-center card-body text-danger ">
-    <h5 class="secondary-text">Other users in <span id="currentLoc">{{location}}</span> that want <span id="currentEat">{{what_to_eat}}</span></h5><br><br><br>
-  </div>
-  <section id="dating results" class="dflex">
-    {{> user-details}}
-  </section>
-  <section>
+<div class="card-title d-flex justify-content-center card-body">
+  <h2 class="fancy purple-text">Welcome to the Dating Portal</h3><br><br><br>
+</div>
+<div class="card-text d-flex justify-content-center card-body text-danger ">
+  <h5 class="secondary-text">Other users in <span id="currentLoc">{{location}}</span> that want <span id="currentEat">{{what_to_eat}}</span></h5><br><br><br>
+</div>
+<section id="dating results" class="dflex">
+  {{> user-details}}
+</section>
+<section>
 
 <div class="card-text d-flex justify-content-center card-body text-danger">
-    <h5>Suggested {{what_to_eat}} Restaurants:</h5>
-  </div>
+  <h5>Suggested {{what_to_eat}} Restaurants:</h5>
+</div>
 {{#each displayRestaurants as |restaurant|}}
-  <div class="card mb-3">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <div id="map{{restaurant.id}}" class="map"></div>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{restaurant.dba}}</h5>
-          <p class="card-text">{{restaurant.building}} {{restaurant.street}}</p>
-        </div>
+<div class="card mb-3" data-lat="{{restaurant.latitude}}" data-lng="{{restaurant.longitude}}" data-restaurant-id="{{restaurant.id}}">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <div id="map{{restaurant.id}}" class="map"></div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{restaurant.dba}}</h5>
+        <p class="card-text">{{restaurant.building}} {{restaurant.street}}</p>
       </div>
     </div>
-    <script type='text/javascript'>
-      function loadMap{{restaurant.id}}() {
-        var map = new Microsoft.Maps.Map('#map{{restaurant.id}}', {
-          credentials: 'AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r',
-          center: new Microsoft.Maps.Location({{restaurant.latitude}}, {{restaurant.longitude}}),
-          zoom: 14
-        });
-        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
-        map.entities.push(pushpin);
-      }
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      script.defer = true;
-      script.src = 'https://www.bing.com/api/maps/mapcontrol?callback=loadMap{{restaurant.id}}&key=AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r';
-      document.body.appendChild(script);
-    </script>
   </div>
-    {{/each}}
+</div>
+{{/each}}
+
      </section><br><br>
 
 
