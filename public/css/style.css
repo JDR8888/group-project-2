@@ -1,9 +1,13 @@
 .fancy {
   font-family: "Great Vibes";
 }
+.secondary-text {
+  font-family: "Raleway";
+  color:#8e39aa;
+}
 .fancy-btn {
   background-color: #8e39aa;
-  color: #ddcee2
+  color: #ddcee2;
 }
 .nav-link {
   color: white;
@@ -13,6 +17,14 @@
 .purple-text {
   color: #8e39aa;
   font-size: 2.5em;
+}
+.centered-text {
+  text-align: center;
+}
+
+.spaced {
+  padding: 12px;
+  margin: 3px;
 }
 
 .hidden {
