@@ -8,92 +8,117 @@
       experiences with someone special.</p>
     {{#if logged_in}}
       <div class='text-center'>
-        <a class='btn btn-lg fancy-btn' href='/dating' role='button'>Find A
-          Date</a>
+        <a class='btn btn-lg fancy-btn' href='/dating' role='button'>Find A Date</a>
       </div>
     {{else}}
       <div class='text-center'>
-        <a class='btn btn-lg fancy-btn' href='/signup' role='button'>Sign Up
-          Now</a>
+        <a class='btn btn-lg fancy-btn' href='/signup' role='button'>Sign Up Now</a>
       </div>
     {{/if}}
   </div>
 </div>
 
 <div class='container'>
-  {{!-- <h2>How It Works</h2> --}}
+  {{! <h2>How It Works</h2> }}
   <div class='row'>
     <div class='col-md-4'>
-      <h4 class="fancy purple-text">Create Your Profile</h4>
+      <h4 class='fancy purple-text'>Create Your Profile</h4>
       <p>Get started by creating a profile that showcases your unique
         personality and food preferences.</p>
+      <img class='homepageimg' src='/images/signup.png' alt='singup form' />
     </div>
     <div class='col-md-4'>
-      <h4 class="fancy purple-text">Explore and Connect</h4>
+      <h4 class='fancy purple-text'>Explore and Connect</h4>
       <p>Browse through other users' profiles and connect with people who share
         your passion for food and adventure.</p>
+      <img
+        class='homepageimg'
+        src='/images/browse.png'
+        alt='woman browsing our website'
+      />
     </div>
     <div class='col-md-4'>
-      <h4 class="fancy purple-text">Plan Your Next Date</h4>
+      <h4 class='fancy purple-text'>Plan Your Next Date</h4>
       <p>Use our platform to find and book reservations at the best restaurants
         in town, and impress your date with your food knowledge and taste.</p>
+      <img class='homepageimg' src='/images/dinner.png' alt='fancy dinner' />
     </div>
   </div>
 
   <hr />
 
-  <h2>Featured Users</h2>
+  <h2 class='fancy purple-text'>Featured Users</h2>
   <div class='row'>
-    {{#each users}}
-      <div class='col-md-4'>
-        <div class='card mb-3'>
-          <div class='row no-gutters'>
-            <div class='col-md-4'>
-              <img
-                src='{{this.profile_picture_url}}'
-                class='card-img'
-                alt='{{this.username}}'
-              />
-            </div>
-            <div class='col-md-8'>
-              <div class='card-body'>
-                <h5 class='card-title'>{{this.username}}</h5>
-                <p class='card-text'>{{this.bio}}</p>
-                <a
-                  href='/message-board/{{this.id}}'
-                  class='btn btn-primary'
-                >Send a Message</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/each}}
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/model-1.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <p>"I never thought I could find love in the city, but thanks to Love
+        Hungry I found my soulmate!" -
+        <strong>Eliza Schwickley</strong></p>
+    </div>
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/model-3.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <p>"I love to eat. If a really hot broad wants to come with me, I'm cool
+        with that." -
+        <strong>Chad Brick</strong></p>
+    </div>
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/model-2.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <p>"It's been such an adventure exploring the fabulous eateries of New
+        York with amazing company. Thank you Love Hungry!" -
+        <strong>Connawillis Persimmons</strong></p>
+    </div>
   </div>
 
   <hr />
 
-  <h2>Featured Restaurants</h2>
+    <h2 class='fancy purple-text'>Featured Restaurants</h2>
   <div class='row'>
-    {{#each restaurants}}
-      <div class='col-md-4'>
-        <div class='card mb-3'>
-          <img
-            src='{{this.image_url}}'
-            class='card-img-top'
-            alt='{{this.name}}'
-          />
-          <div class='card-body'>
-            <h5 class='card-title'>{{this.name}}</h5>
-            <p class='card-text'>{{this.description}}</p>
-            <a href='{{this.reserve_url}}' class='btn btn-primary'>Reserve a
-              Table</a>
-          </div>
-        </div>
-      </div>
-    {{/each}}
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/gramercy-tavern.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <h5 class="text-center">Gramercy Tavern</h5>
+      <p class="text-center">42 E 20th St</p>
+    </div>
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/nakazawa.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <h5 class="text-center">Sushi Nakazawa</h5>
+      <p class="text-center">23 Commerce St</p>
+    </div>
+    <div class='col-md-4'>
+      <img
+        class='homepageimg2'
+        src='/images/Oxomoco.png'
+        alt='attractive model'
+      />
+      <p></p>
+      <h5 class="text-center">Oxomoco</h5>
+      <p class="text-center">128 Greenpoint Ave</p>
+    </div>
   </div>
-</div>
 
 <style>
   body{ background-color: #C68CD9; }
