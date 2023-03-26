@@ -31,20 +31,28 @@
      </section><br><br>
 <!-- Add the script to load the maps for each restaurant card -->
 <script type='text/javascript'>
-  function loadMap(element) {
-    var lat = parseFloat(element.dataset.lat);
-    var lng = parseFloat(element.dataset.lng);
-    var restaurantId = element.dataset.restaurantId;
+ async function loadMap(element) {
+  const lat = parseFloat(element.dataset.lat);
+  const lng = parseFloat(element.dataset.lng);
+  const restaurantId = element.dataset.restaurantId;
 
-    var map = new Microsoft.Maps.Map('#map' + restaurantId, {
-      credentials: 'AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r',
-      center: new Microsoft.Maps.Location(lat, lng),
-      zoom: 14
-    });
+  // Fetch the API key from the server
+  const response = await fetch('/api/maps-key');
+  const data = await response.json();
+  const apiKey = data.apiKey;
 
-    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
-    map.entities.push(pushpin);
-  }
+  // Initialize the map with the API key
+  const map = new Microsoft.Maps.Map('#map' + restaurantId, {
+    credentials: apiKey,
+    center: new Microsoft.Maps.Location(lat, lng),
+    zoom: 14
+  });
+
+  const pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+  map.entities.push(pushpin);
+}
+
+
 
   function initMap() {
     var restaurantCards = document.querySelectorAll('.card[data-lat][data-lng][data-restaurant-id]');
