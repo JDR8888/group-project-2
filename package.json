@@ -1,6 +1,9 @@
 {
   "name": "user-list",
   "version": "1.0.0",
+  "engines":{
+    "node": "16.x"
+  },
   "main": "server.js",
   "scripts": {
     "test": "eslint --ext .js ./",
