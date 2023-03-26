@@ -101,7 +101,7 @@
     <div class="card-text d-flex justify-content-center card-body text-danger">
       <h5 class="secondary-text">Suggested {{what_to_eat}} Restaraunts:</h5>
     </div>
-    {{#each displayRestaurants as |restaraunt|}}
+    {{#each displayRestaurants as |restaurant|}}
     <div class="card mb-3">
       <div class="row no-gutters">
         <div class="col-md-4">
@@ -109,8 +109,9 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{restaraunt.name}}</h5>
-            <p class="card-text"><strong>{{restaraunt.dba}}</strong></p>
+            <h5 class="card-title">{{restaurant.dba}}</h5>
+            <p class="card-text"><strong>{{restaurant.building}} {{restaurant.street}}</strong></p>
+             <p class="card-text">{{restaurant.zipcode}}</p>
           </div>
         </div>
       </div>

@@ -39,3 +39,17 @@
   color: red;
   text-decoration: red wavy underline;
 }
+
+.homepageimg {
+  height: 250px;
+  width: auto;
+  border-radius: 8em;
+  border: purple dotted 3px;
+}
+
+.homepageimg2 {
+  height: 250px;
+  width: auto;
+  border-radius: 8em;
+  border: black solid 3px;
+}
