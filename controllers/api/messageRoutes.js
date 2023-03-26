@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 const router = require('express').Router();
-const { Message } = require('../../models');
+const { Message, User } = require('../../models');
 
 // Get a user's messages
 router.get('/:id', async (req, res) => {
@@ -11,6 +11,10 @@ router.get('/:id', async (req, res) => {
     const messages = await Message.findAll({
       where: {
         receiver_id: id,
+      },
+      include: {
+        model: User,
+        as: 'sender',
       },
     });
 

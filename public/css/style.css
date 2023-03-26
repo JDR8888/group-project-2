@@ -6,3 +6,8 @@
 .hidden {
   display: none;
 }
+
+.message {
+  color: black;
+}
+

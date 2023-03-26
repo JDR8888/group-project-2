@@ -3,34 +3,47 @@ const { Op } = require('sequelize');
 const { User, Restaurant, Message } = require('../models');
 
 router.get('/', async (req, res) => {
-  res.render('homepage', {
-    title: 'Homepage',
-    logged_in: req.session.logged_in,
-  });
+  try {
+    res.render('homepage', {
+      title: 'Homepage',
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', async (req, res) => {
   res.render('login', {
+    logged_in: req.session.logged_in,
     title: 'login',
   });
 });
 
+// eslint-disable-next-line consistent-return
 router.get('/messages', async (req, res) => {
   try {
+    if (!req.session.user) {
+      return res.redirect('/login');
+    }
     const messages = await Message.findAll({
       where: {
         receiver_id: req.session.user.id,
       },
-      include: [{ model: User, as: 'sender' }],
+      include: {
+        model: User,
+        as: 'sender',
+      },
     });
+    console.log('messages', messages);
 
     const displayMessages = messages.map((message) =>
       message.get({ plain: true })
     );
-
+    console.log('displayMessages', displayMessages);
     res.render('message-board', {
       displayMessages,
-      loggedIn: req.session.logged_in,
+      logged_in: req.session.logged_in,
       title: 'Messages',
     });
   } catch (error) {
@@ -83,7 +96,7 @@ router.get('/dating', async (req, res) => {
       user_id: req.session.user.id,
       displayDates,
       displayRestaurants,
-      loggedIn: req.session.logged_in,
+      logged_in: req.session.logged_in,
       title: 'Dating',
     });
   } catch (err) {
