@@ -1,13 +1,20 @@
+/* eslint-disable */
+
 const router = require('express').Router();
 const { Op, Sequelize } = require('sequelize');
 const { User, Restaurant, Message } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
+    let user_id = null;
+    if (req.session.user) {
+      user_id = req.session.user.id;
+    }
+
     res.render('homepage', {
       title: 'Homepage',
       logged_in: req.session.logged_in,
-      user_id: req.session.user.id,
+      user_id,
     });
   } catch (err) {
     res.status(500).json(err);
