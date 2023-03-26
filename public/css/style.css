@@ -1,6 +1,18 @@
+.fancy {
+  font-family: "Great Vibes";
+}
+.fancy-btn {
+  background-color: #8e39aa;
+  color: #ddcee2
+}
 .nav-link {
-  font-size: larger;
   color: white;
+  font-size: 1.75em;
+  margin: 3px;
+}
+.purple-text {
+  color: #8e39aa;
+  font-size: 2.5em;
 }
 
 .hidden {
