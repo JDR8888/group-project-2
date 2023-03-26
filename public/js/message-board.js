@@ -17,7 +17,7 @@ exampleModal.addEventListener('show.bs.modal', (event) => {
 
   exampleModal.addEventListener('hide.bs.modal', (event) => {
     console.log('modal hidden');
-    messageFormEl.reset();
+    // messageFormEl.reset();
     const modalBody = exampleModal.querySelector(`.modal-body${recipientID}`);
     modalBody.innerHTML = modalBodyContent; // restore original modal body's content
   });
