@@ -26,7 +26,20 @@
         </div>
       </div>
     </div>
-    
+    <script type='text/javascript'>
+      function loadMap{{restaurant.id}}() {
+        var map = new Microsoft.Maps.Map('#map{{restaurant.id}}', {
+          credentials: 'AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r',
+          center: new Microsoft.Maps.Location({{restaurant.latitude}}, {{restaurant.longitude}}),
+          zoom: 14
+        });
+        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+        map.entities.push(pushpin);
+      }
+    {{/each}}
+     </section><br><br>
+
+
 {{!-- update preferences modal starts here --}}
  <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color:#8e39aa; border:#8e39aa">
