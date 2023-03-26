@@ -34,6 +34,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "images")));
 
+// Add the route to serve the API key
+app.get('/api/maps-key', (req, res) => {
+  res.json({ apiKey: process.env.MAPS_API_KEY });
+});
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
