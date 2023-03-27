@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { User, Restaurant, Date, Message } = require('../models');
 
-const rawRestaurantData01 = require('./restaurantData/restaurant-list.json');
+const rawRestaurantData01 = require('./restaurantData.json');
 const rawRestaurantData02 = require('./restaurantData2.json');
 const userData = require('./userData.json');
 const datesData = require('./dateData.json');
