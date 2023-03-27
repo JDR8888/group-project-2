@@ -38,6 +38,7 @@ router.get('/messages', async (req, res) => {
       where: {
         receiver_id: req.session.user.id,
       },
+      order: [['id', 'DESC']],
       include: {
         model: User,
         as: 'sender',

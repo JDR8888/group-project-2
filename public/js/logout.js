@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const messageTabEl = document.getElementById('messageTab');
       messageTabEl.classList.remove('text-light');
       messageTabEl.classList.add('text-danger');
+      messageTabEl.classList.add('animate__heartBeat');
       // There are new messages! Do something with them here.
       console.log(
         `There are ${messages.length - currentMessageLength} new messages!`
