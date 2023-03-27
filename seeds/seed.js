@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { User, Restaurant, Date, Message } = require('../models');
 
-const rawRestaurantData01 = require('./restaurantData.json');
+const rawRestaurantData01 = require('./restaurantData/restaurant-list.json');
 const rawRestaurantData02 = require('./restaurantData2.json');
 const userData = require('./userData.json');
 const datesData = require('./dateData.json');
@@ -51,6 +51,10 @@ const filteredData2 = rawRestaurantData02.filter(
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
+
+  await sequelize.query(
+    'DROP INDEX message_sender_id_receiver_id_unique ON message'
+  );
 
   await User.bulkCreate(userData, {
     individualHooks: true,
