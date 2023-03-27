@@ -14,8 +14,10 @@
         </div>
         <div class='col-md-8'>
           <div class='card-body'>
-            <h5 id="dateName{{date.id}}"class='card-title'>{{date.name}}</h5>
+            <h5 id='dateName{{date.id}}' class='card-title'>{{date.name}}</h5>
             <p class='card-text'><strong>Gender:</strong> {{date.gender}}</p>
+            <p class='card-text'><strong>Age:</strong>
+              {{calculate_age date.birthday}}</p>
             <p class='card-text'><strong>Zodiac Sign:</strong>
               {{date.zodiac}}</p>
             <p class='card-text'><strong>Bio:</strong> {{date.bio}}</p>
@@ -38,7 +40,11 @@
               <form id='message-form' class='modal-dialog'>
                 <div class='modal-content'>
                   <div class='modal-header'>
-                    <h1 id="headerText"class='modal-title fs-5' id='exampleModalLabel'>Message
+                    <h1
+                      id='headerText'
+                      class='modal-title fs-5'
+                      id='exampleModalLabel'
+                    >Message
                       {{date.name}}</h1>
                     <button
                       type='button'

@@ -17,6 +17,7 @@
             <div class="card-body">
               <h5 id="dateName{{date.id}}" class="card-title">{{message.sender.name}}</h5>
               <p class="card-text"><strong>Gender:</strong> {{message.sender.gender}}</p>
+              <p class="card-text"><strong>Age:</strong> {{calculate_age message.sender.birthday}}</p>
               <p class="card-text"><strong>Zodiac Sign:</strong> {{message.sender.zodiac}}</p>
               <p class="card-text"><strong>Bio:</strong> {{message.sender.bio}}</p>
             </div>

@@ -12,6 +12,7 @@ router.get('/:id', async (req, res) => {
       where: {
         receiver_id: id,
       },
+      order: [['createdAT', 'DESC']],
       include: {
         model: User,
         as: 'sender',
