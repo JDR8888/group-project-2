@@ -1,29 +1,48 @@
-<div class='container'>
+  <div class='container mx-auto my-4'>
 
-  <div class="card-title d-flex justify-content-center card-body git purple-text">
-    <h3>Message Board</h3>
-  </div><br>
+    <div class="card-title d-flex justify-content-center card-body git purple-text">
+      <h1 class="fancy">Messages</h3>
+    </div><br>
 
-    <div class='col-md-4  text-light'>
-      <h3 class="fancy">Messages</h3>
+        {{#if displayMessages}}
+        {{#each displayMessages as |message|}}
+  <section class="row">
+    <div class="col-md-6">
+      <div class="card mb-3 justify-content-center dflex">
+        <div class="row no-gutters">
+          <div class="col-md-2">
+            <img src="{{message.sender.profile_pic}}" class="card-img" alt="{{message.sender.name}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 id="dateName{{date.id}}" class="card-title">{{message.sender.name}}</h5>
+              <p class="card-text"><strong>Gender:</strong> {{message.sender.gender}}</p>
+              <p class="card-text"><strong>Zodiac Sign:</strong> {{message.sender.zodiac}}</p>
+              <p class="card-text"><strong>Bio:</strong> {{message.sender.bio}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="card mb-3 p-4 dflex">
+        <div class="message card-body">
+          <h4 class="card-title fancy">From: {{message.sender.name}}</h4>
+          <p class="card-text secondary-text">"{{message.content}}"</p>
+          <button type="button" class="btn fancy-btn m-2" data-bs-toggle="modal" data-bs-target="#reply" data-bs-whatever="{{message.sender.id}}">
+            Reply to {{message.sender.name}}
+          </button>
+          <br>
+          <button type="button" class="btn fancy-btn" data-bs-toggle="modal" data-bs-target="#profileModal{{message.sender.id}}">
+            View {{message.sender.name}}'s Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      {{#if displayMessages}}
-      {{#each displayMessages as |message|}}
-      <div class='card mb-3 p-4'>
-        <div class="message"class='card-body'>
-          <h4 class='card-title fancy'>From: {{message.sender.name}} </h4>
-          <p class='card-text secondary-text'>"{{message.content}}"</p>
-                    <button
-              type='button'
-              class='btn fancy-btn m-2'
-              data-bs-toggle='modal'
-              data-bs-target='#reply'
-              data-bs-whatever='{{message.sender.id}}'
-            >Reply to {{message.sender.name}}</button> <br>
-        <button type="button" class="btn fancy-btn" data-bs-toggle="modal" data-bs-target="#profileModal{{message.sender.id}}">
-  View {{message.sender.name}}'s Profile
-</button>   
-</div>    
+
       </div><br>
 
 <div class="modal fade" id="profileModal{{message.sender.id}}" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -111,3 +130,24 @@
 {{#if displayMessages.length}}
 <script src="/js/message-board.js"></script>
 {{/if}}
+
+<style>
+  body {
+    background-color: #C68CD9;
+  }
+  .card {
+    margin: 30px;
+    border: black solid 3px;
+    border-radius:25px;
+  }
+
+.card-img {
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin: 40% 0 0 12%;
+}
+</style>
