@@ -9,11 +9,11 @@
 <section class="row">
   <div class="col-md-6 mt-3">
     <div class="card mb-3 justify-content-center dflex">
-      <div class="row no-gutters">
-        <div class="col-md-2">
+      <div class="row no-gutters p-2">
+        <div class="col-md-2 p-1">
           <img src="{{message.sender.profile_pic}}" class="card-img" alt="{{message.sender.name}}">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 m-2">
           <div class="card-body">
             <h5 id="dateName{{date.id}}" class="card-title">{{message.sender.name}}</h5>
             <p class="card-text"><strong>Gender:</strong> {{message.sender.gender}}</p>
@@ -30,7 +30,7 @@
     <div class="card mb-3 p-4 dflex">
       <div class="message card-body">
         <h4 class="card-title fancy">From: {{message.sender.name}}</h4>
-        <h4 class="card-title fancy">Sent: {{format_time message.createdAt}}</h4>
+        <p class="card-title secondary-text" style="font-size: smaller;">Sent: {{format_time message.createdAt}}</p>
         <p class="card-text secondary-text">"{{message.content}}"</p>
         <button type="button" class="btn fancy-btn m-2" data-bs-toggle="modal" data-bs-target="#reply" data-bs-whatever="{{message.sender.id}}">
           Reply to {{message.sender.name}}

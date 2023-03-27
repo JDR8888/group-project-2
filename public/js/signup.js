@@ -50,7 +50,6 @@ const signupFormHandler = async (event) => {
     body: JSON.stringify(answers),
     headers: { 'Content-Type': 'application/json' },
   });
-  console.log(response);
   if (response.ok) {
     // make the login request
     const loginResponse = await fetch('api/users/login', {
