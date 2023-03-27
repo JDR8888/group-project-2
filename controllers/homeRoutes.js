@@ -28,7 +28,6 @@ router.get('/login', async (req, res) => {
   });
 });
 
-// eslint-disable-next-line consistent-return
 router.get('/messages', async (req, res) => {
   try {
     if (!req.session.user) {
