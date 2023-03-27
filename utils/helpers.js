@@ -1,8 +1,8 @@
-const moment = require("moment");
+const moment = require('moment');
 
 module.exports = {
-  format_date: (dateStr) => {
+  format_time: (dateStr) => {
     const date = moment(dateStr);
-    return date.format("MMM DD YYYY");
+    return date.format('h:mm A dddd M/D');
   },
 };
