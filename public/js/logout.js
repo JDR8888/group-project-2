@@ -51,6 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentMessageLength = await getMessageLength();
     setInterval(() => {
       checkForNewMessages(userID);
-    }, 30000); // 30 seconds in milliseconds
+    }, 10000);
   })();
 });
